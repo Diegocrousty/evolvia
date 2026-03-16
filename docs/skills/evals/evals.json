@@ -1,0 +1,368 @@
+{
+  "skills": [
+    {
+      "skill_name": "site-electricien",
+      "skill_path": "docs/skills/SKILL_site-electricien.md",
+      "evals": [
+        {
+          "id": 1,
+          "prompt": "Crée un site vitrine pour Marc, électricien à Lyon, certifié Qualifelec et IRVE, 12 ans d'expérience, dépannage + installation + bornes IRVE. Tel: 06 12 34 56 78.",
+          "expected_output": "Site HTML complet respectant le SKILL électricien : palette, typo, structure 11 sections, certifications visibles",
+          "assertions": [
+            {
+              "id": "elec-palette-primaire",
+              "name": "Palette — Bleu nuit #1C3557 présent",
+              "type": "contains",
+              "check": "#1C3557",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-palette-ambre",
+              "name": "Palette — Ambre CTA #F59E0B présent",
+              "type": "contains",
+              "check": "#F59E0B",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-palette-vert-certif",
+              "name": "Palette — Vert certifications #10B981 présent",
+              "type": "contains",
+              "check": "#10B981",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-font-ibm-plex",
+              "name": "Typo — IBM Plex Sans utilisé",
+              "type": "contains",
+              "check": "IBM Plex Sans",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-no-inter",
+              "name": "Typo — Inter ABSENT (interdit)",
+              "type": "not_contains",
+              "check": "font-family.*Inter",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-no-poppins",
+              "name": "Typo — Poppins ABSENT (interdit)",
+              "type": "not_contains",
+              "check": "Poppins",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-certif-qualifelec",
+              "name": "Certifications — Qualifelec mentionné",
+              "type": "contains",
+              "check": "Qualifelec",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-certif-rge",
+              "name": "Certifications — RGE mentionné",
+              "type": "contains",
+              "check": "RGE",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-certif-irve",
+              "name": "Certifications — IRVE mentionné",
+              "type": "contains",
+              "check": "IRVE",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-certif-consuel",
+              "name": "Certifications — CONSUEL mentionné",
+              "type": "contains",
+              "check": "CONSUEL",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-norme-nfc15100",
+              "name": "Norme — NF C 15-100 mentionnée",
+              "type": "contains",
+              "check": "NF C 15-100",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-tel-cliquable",
+              "name": "Structure — Téléphone cliquable (tel:)",
+              "type": "contains",
+              "check": "tel:",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-formulaire-max-4",
+              "name": "Formulaire — 4 champs max (pas de 5e input/select/textarea hors bouton)",
+              "type": "max_form_fields",
+              "check": 4,
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-section-securite",
+              "name": "Structure — Section sécurité & garanties présente",
+              "type": "contains_any",
+              "check": ["Votre installation est entre de bonnes mains", "Votre installation, notre responsabilité", "garanties", "Sécurité"],
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-schema-org",
+              "name": "SEO — Schema.org Electrician présent",
+              "type": "contains",
+              "check": "Electrician",
+              "target": "output_html",
+              "critical": false
+            },
+            {
+              "id": "elec-sticky-mobile",
+              "name": "Structure — Sticky mobile bar présente",
+              "type": "contains_any",
+              "check": ["fixed bottom", "sticky.*bottom", "Appeler"],
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-no-dark-bg",
+              "name": "Palette — Pas de fond sombre Evolvia (#080808)",
+              "type": "not_contains",
+              "check": "#080808",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-no-cormorant",
+              "name": "Typo — Pas de Cormorant (réservé Evolvia)",
+              "type": "not_contains",
+              "check": "Cormorant",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-no-grain",
+              "name": "Design — Pas de grain overlay (réservé Evolvia)",
+              "type": "not_contains",
+              "check": "grain",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-assurance-decennale",
+              "name": "Légal — Assurance décennale mentionnée",
+              "type": "contains_any",
+              "check": ["assurance décennale", "décennale", "Assurance décennale"],
+              "target": "output_html",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "prompt": "Fais un site pour Sophie, électricienne à Nantes, pas certifiée Qualifelec, 5 ans d'expérience, dépannage + mise aux normes uniquement. Tel: 07 98 76 54 32.",
+          "expected_output": "Site sans mentions Qualifelec/IRVE, remplacées par années d'expérience + assurance décennale. Reste du SKILL respecté.",
+          "assertions": [
+            {
+              "id": "elec-no-certif-fallback",
+              "name": "Adaptabilité — Pas de fausse certification Qualifelec si client non certifié",
+              "type": "contextual",
+              "check": "Si le client n'est pas certifié Qualifelec, la mention Qualifelec ne doit pas apparaître comme si c'était le cas. Remplacer par années d'expérience + assurance décennale.",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-palette-maintained",
+              "name": "Palette maintenue même sans certifications",
+              "type": "contains",
+              "check": "#1C3557",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-nfc-still-present",
+              "name": "NF C 15-100 toujours mentionnée (norme obligatoire indépendante de Qualifelec)",
+              "type": "contains",
+              "check": "NF C 15-100",
+              "target": "output_html",
+              "critical": true
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "prompt": "Améliore la section hero du site électricien de Marc à Lyon. Le taux de rebond est trop élevé.",
+          "expected_output": "Modification du hero uniquement, en respectant le SKILL : H1 avec ville + bénéfice, certifications inline, double CTA ambre + outline.",
+          "assertions": [
+            {
+              "id": "elec-hero-h1-format",
+              "name": "Hero — H1 contient ville et métier",
+              "type": "contains_any",
+              "check": ["Électricien à Lyon", "électricien à Lyon", "Lyon"],
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "elec-hero-double-cta",
+              "name": "Hero — Double CTA présent (appel + devis)",
+              "type": "contains_any",
+              "check": ["Appeler", "Devis"],
+              "target": "output_html",
+              "critical": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "skill_name": "site-plombier",
+      "skill_path": "docs/skills/SKILL_site-plombier.md",
+      "evals": [
+        {
+          "id": 1,
+          "prompt": "Crée un site vitrine pour Jean, plombier-chauffagiste à Marseille, RGE certifié, 15 ans d'expérience, dépannage + chauffe-eau + chaudière. Tel: 06 11 22 33 44.",
+          "expected_output": "Site HTML complet respectant le SKILL plombier : palette bleu marine + orange, Source Sans Pro, structure complète.",
+          "assertions": [
+            {
+              "id": "plomb-palette-bleu",
+              "name": "Palette — Bleu marine #1B3A6B présent",
+              "type": "contains",
+              "check": "#1B3A6B",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-palette-orange",
+              "name": "Palette — Orange CTA #E8772E présent",
+              "type": "contains",
+              "check": "#E8772E",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-font-source-sans",
+              "name": "Typo — Source Sans Pro utilisé",
+              "type": "contains_any",
+              "check": ["Source Sans Pro", "Source Sans 3"],
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-no-inter",
+              "name": "Typo — Inter ABSENT",
+              "type": "not_contains",
+              "check": "font-family.*Inter",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-tel-cliquable",
+              "name": "Structure — Téléphone cliquable",
+              "type": "contains",
+              "check": "tel:",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-formulaire-max-4",
+              "name": "Formulaire — 4 champs max",
+              "type": "max_form_fields",
+              "check": 4,
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-zone-geo",
+              "name": "Structure — Zone géo mentionnée",
+              "type": "contains_any",
+              "check": ["Marseille", "zone", "intervient"],
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-schema-org",
+              "name": "SEO — Schema.org Plumber présent",
+              "type": "contains",
+              "check": "Plumber",
+              "target": "output_html",
+              "critical": false
+            },
+            {
+              "id": "plomb-sticky-mobile",
+              "name": "Structure — Sticky mobile bar",
+              "type": "contains_any",
+              "check": ["fixed bottom", "sticky.*bottom", "Appeler"],
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-no-dark-bg",
+              "name": "Palette — Pas de fond sombre Evolvia",
+              "type": "not_contains",
+              "check": "#080808",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-no-cormorant",
+              "name": "Typo — Pas de Cormorant (réservé Evolvia)",
+              "type": "not_contains",
+              "check": "Cormorant",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-no-grain",
+              "name": "Design — Pas de grain overlay",
+              "type": "not_contains",
+              "check": "grain",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-rge",
+              "name": "Certifications — RGE mentionné",
+              "type": "contains",
+              "check": "RGE",
+              "target": "output_html",
+              "critical": true
+            },
+            {
+              "id": "plomb-assurance-decennale",
+              "name": "Légal — Assurance décennale mentionnée",
+              "type": "contains_any",
+              "check": ["assurance décennale", "décennale"],
+              "target": "output_html",
+              "critical": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "version": "1.0.0",
+    "created": "2026-03-16",
+    "description": "Assertions QA pour les skills sectoriels Evolvia — vérifie palette, typo, structure, certifications, anti-patterns",
+    "assertion_types": {
+      "contains": "Le HTML output doit contenir cette string exacte",
+      "not_contains": "Le HTML output ne doit PAS contenir cette string/pattern",
+      "contains_any": "Le HTML output doit contenir au moins une des strings listées",
+      "max_form_fields": "Le formulaire principal ne doit pas dépasser N champs (input/select/textarea, hors bouton submit)",
+      "contextual": "Vérification logique dépendante du contexte client — évaluation manuelle ou par LLM"
+    }
+  }
+}

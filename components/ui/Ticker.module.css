@@ -1,0 +1,22 @@
+/* components/ui/Ticker.module.css */
+.ticker {
+  display: flex;
+  gap: 1.5rem;
+  animation: ticker 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    animation: none;
+  }
+}
