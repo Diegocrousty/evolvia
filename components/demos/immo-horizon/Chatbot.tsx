@@ -316,7 +316,7 @@ export function IHChatbot() {
                   <div
                     style={{
                       maxWidth: '80%',
-                      padding: '10px 14px',
+                      padding: '12px 16px',
                       borderRadius:
                         msg.from === 'user'
                           ? '12px 12px 4px 12px'
@@ -344,7 +344,7 @@ export function IHChatbot() {
                   <div
                     className="flex items-center gap-1"
                     style={{
-                      padding: '10px 14px',
+                      padding: '12px 16px',
                       borderRadius: '12px 12px 12px 4px',
                       background: 'var(--ih-bg-alt)',
                     }}
@@ -408,9 +408,10 @@ export function IHChatbot() {
                       fontFamily: 'var(--font-body), sans-serif',
                       fontWeight: 500,
                       fontSize: 13,
-                      padding: '8px 14px',
+                      padding: '10px 16px',
+                      minHeight: 44,
                       borderRadius: 8,
-                      border: '1px solid rgba(26,60,94,0.15)',
+                      border: '1px solid rgba(26,60,94,0.08)',
                       background: 'transparent',
                       color: 'var(--ih-primary)',
                     }}
@@ -422,7 +423,7 @@ export function IHChatbot() {
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = 'transparent'
                       e.currentTarget.style.color = 'var(--ih-primary)'
-                      e.currentTarget.style.borderColor = 'rgba(26,60,94,0.15)'
+                      e.currentTarget.style.borderColor = 'rgba(26,60,94,0.08)'
                     }}
                   >
                     {opt.label}

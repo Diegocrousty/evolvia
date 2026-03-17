@@ -12,11 +12,6 @@ const display: React.CSSProperties = {
   fontWeight: 600,
 }
 
-const displayBold: React.CSSProperties = {
-  fontFamily: 'var(--font-display), serif',
-  fontWeight: 700,
-}
-
 const body500: React.CSSProperties = {
   fontFamily: 'var(--font-body), sans-serif',
   fontWeight: 500,
@@ -144,8 +139,12 @@ const avis = [
 
 export default function HomeContent({
   heroImage,
+  propertyImages,
+  agentImages,
 }: {
   heroImage: UnsplashImage
+  propertyImages: UnsplashImage[]
+  agentImages: UnsplashImage[]
 }) {
   return (
     <>
@@ -232,7 +231,7 @@ export default function HomeContent({
                 href="#estimation"
                 className="inline-flex items-center gap-2 transition-colors duration-200"
                 style={{
-                  background: 'var(--ih-accent)',
+                  background: 'var(--ih-primary)',
                   color: '#ffffff',
                   borderRadius: 11,
                   padding: '16px 32px',
@@ -240,10 +239,10 @@ export default function HomeContent({
                   fontSize: 15,
                 }}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.background = 'var(--ih-accent-hover)')
+                  (e.currentTarget.style.background = 'var(--ih-primary-hover)')
                 }
                 onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = 'var(--ih-accent)')
+                  (e.currentTarget.style.background = 'var(--ih-primary)')
                 }
               >
                 Estimer mon bien gratuitement
@@ -300,7 +299,7 @@ export default function HomeContent({
             target="_blank"
             rel="noopener noreferrer"
             className="absolute bottom-3 right-4 z-[3] transition-opacity hover:opacity-80"
-            style={{ color: 'rgba(255,255,255,0.30)', fontSize: 10 }}
+            style={{ color: 'rgba(255,255,255,0.25)', fontSize: 11 }}
           >
             Photo : {heroImage.credit} / Unsplash
           </a>
@@ -418,16 +417,7 @@ export default function HomeContent({
                       id="surface"
                       type="number"
                       placeholder="85"
-                      style={{
-                        width: '100%',
-                        padding: '12px 16px',
-                        borderRadius: 8,
-                        border: '1px solid rgba(26,26,24,0.15)',
-                        background: 'var(--ih-bg)',
-                        fontSize: 15,
-                        color: 'var(--ih-text)',
-                        fontFamily: 'var(--font-body), sans-serif',
-                      }}
+                      style={inputStyle}
                     />
                   </div>
                   <div>
@@ -442,16 +432,7 @@ export default function HomeContent({
                       type="tel"
                       placeholder="06 XX XX XX XX"
                       required
-                      style={{
-                        width: '100%',
-                        padding: '12px 16px',
-                        borderRadius: 8,
-                        border: '1px solid rgba(26,26,24,0.15)',
-                        background: 'var(--ih-bg)',
-                        fontSize: 15,
-                        color: 'var(--ih-text)',
-                        fontFamily: 'var(--font-body), sans-serif',
-                      }}
+                      style={inputStyle}
                     />
                   </div>
                 </div>
@@ -494,7 +475,7 @@ export default function HomeContent({
       {/* ══════════════════════════════════════════
           SECTION 3 — CHATBOT IA (différenciateur Pro)
       ══════════════════════════════════════════ */}
-      <section style={{ background: 'var(--ih-primary)', paddingTop: 96, paddingBottom: 96 }}>
+      <section style={{ background: 'var(--ih-primary)', paddingTop: 112, paddingBottom: 112 }}>
         <div className="max-w-[1100px] mx-auto px-6">
           <IHAnimatedSection>
             <div className="text-center" style={{ maxWidth: 600, margin: '0 auto 64px' }}>
@@ -504,8 +485,8 @@ export default function HomeContent({
               <h2
                 className="mb-4"
                 style={{
-                  ...displayBold,
-                  fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+                  ...display,
+                  fontSize: 'clamp(2rem, 3vw, 3rem)',
                   color: '#ffffff',
                   lineHeight: 1.1,
                   letterSpacing: '-0.01em',
@@ -546,7 +527,7 @@ export default function HomeContent({
                 <div
                   style={{
                     background: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.10)',
+                    border: '1px solid rgba(255,255,255,0.08)',
                     borderRadius: 12,
                     padding: 32,
                     height: '100%',
@@ -632,13 +613,7 @@ export default function HomeContent({
                   Biens disponibles
                 </span>
                 <h2
-                  style={{
-                    ...displayBold,
-                    fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                    color: 'var(--ih-primary)',
-                    lineHeight: 1.1,
-                    letterSpacing: '-0.01em',
-                  }}
+                  style={h2Style}
                 >
                   Nos biens \u00E0 Bordeaux
                 </h2>
@@ -667,17 +642,21 @@ export default function HomeContent({
                     overflow: 'hidden',
                   }}
                 >
-                  {/* Photo placeholder */}
+                  {/* Property photo */}
                   <div
-                    className="relative"
-                    style={{
-                      height: 200,
-                      background: bien.color,
-                    }}
+                    className="relative overflow-hidden"
+                    style={{ height: 200 }}
                   >
+                    <Image
+                      src={propertyImages[i]?.src || ''}
+                      alt={`${bien.type} — ${bien.quartier}`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                     {/* Quartier badge */}
                     <span
-                      className="absolute"
+                      className="absolute z-[1]"
                       style={{
                         top: 12,
                         left: 12,
@@ -692,10 +671,6 @@ export default function HomeContent({
                     >
                       {bien.quartier}
                     </span>
-                    {/* Home icon centered */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Home size={32} style={{ color: 'rgba(26,60,94,0.15)' }} />
-                    </div>
                   </div>
 
                   <div style={{ padding: 24 }}>
@@ -792,20 +767,22 @@ export default function HomeContent({
                   }}
                 >
                   <div className="flex items-start gap-5">
-                    {/* Avatar placeholder */}
+                    {/* Agent photo */}
                     <div
-                      className="shrink-0 flex items-center justify-center"
+                      className="shrink-0 relative overflow-hidden"
                       style={{
                         width: 64,
                         height: 64,
                         borderRadius: '50%',
-                        background: 'var(--ih-primary)',
-                        color: '#ffffff',
-                        ...display,
-                        fontSize: 20,
                       }}
                     >
-                      {agent.initials}
+                      <Image
+                        src={agentImages[i]?.src || ''}
+                        alt={agent.nom}
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                      />
                     </div>
                     <div className="flex-1">
                       <h3 style={{ ...body500, fontSize: 20, lineHeight: 1.4, color: 'var(--ih-text)' }}>
@@ -821,7 +798,7 @@ export default function HomeContent({
                   </div>
 
                   <p
-                    className="mt-5"
+                    className="mt-6"
                     style={{
                       fontSize: 15,
                       lineHeight: 1.75,
@@ -853,13 +830,7 @@ export default function HomeContent({
                   Avis clients
                 </span>
                 <h2
-                  style={{
-                    ...displayBold,
-                    fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                    color: 'var(--ih-primary)',
-                    lineHeight: 1.1,
-                    letterSpacing: '-0.01em',
-                  }}
+                  style={h2Style}
                 >
                   Ce que nos clients disent
                 </h2>
@@ -967,7 +938,7 @@ export default function HomeContent({
       {/* ══════════════════════════════════════════
           SECTION 7 — MARCHÉ BORDELAIS
       ══════════════════════════════════════════ */}
-      <section style={{ background: 'var(--ih-bg-alt)', paddingTop: 64, paddingBottom: 64 }}>
+      <section style={{ background: 'var(--ih-bg-alt)', paddingTop: 80, paddingBottom: 80 }}>
         <div className="max-w-[1100px] mx-auto px-6">
           <IHAnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-12 items-start">
@@ -1053,7 +1024,7 @@ export default function HomeContent({
                   05 56 00 00 00
                 </a>
                 <p
-                  style={{ ...mono, fontSize: 11, color: 'var(--ih-text-secondary)', opacity: 0.5, marginLeft: 30 }}
+                  style={{ ...mono, fontSize: 11, color: 'var(--ih-text-secondary)', opacity: 0.40, marginLeft: 30 }}
                 >
                   Lun\u2013Ven 9h\u201318h \u00B7 Sam 10h\u201313h
                 </p>
@@ -1084,16 +1055,7 @@ export default function HomeContent({
                       id="prenom"
                       type="text"
                       placeholder="Votre pr\u00E9nom"
-                      style={{
-                        width: '100%',
-                        padding: '12px 16px',
-                        borderRadius: 8,
-                        border: '1px solid rgba(26,26,24,0.15)',
-                        background: 'var(--ih-bg)',
-                        fontSize: 15,
-                        color: 'var(--ih-text)',
-                        fontFamily: 'var(--font-body), sans-serif',
-                      }}
+                      style={inputStyle}
                     />
                   </div>
                   <div>
@@ -1107,16 +1069,7 @@ export default function HomeContent({
                       id="email"
                       type="email"
                       placeholder="votre@email.fr"
-                      style={{
-                        width: '100%',
-                        padding: '12px 16px',
-                        borderRadius: 8,
-                        border: '1px solid rgba(26,26,24,0.15)',
-                        background: 'var(--ih-bg)',
-                        fontSize: 15,
-                        color: 'var(--ih-text)',
-                        fontFamily: 'var(--font-body), sans-serif',
-                      }}
+                      style={inputStyle}
                     />
                   </div>
                 </div>
@@ -1147,7 +1100,7 @@ export default function HomeContent({
                     htmlFor="message"
                     style={labelStyle}
                   >
-                    Message <span style={{ color: 'var(--ih-text-secondary)', opacity: 0.5 }}>(optionnel)</span>
+                    Message <span style={{ color: 'var(--ih-text-secondary)', opacity: 0.40 }}>(optionnel)</span>
                   </label>
                   <textarea
                     id="message"
@@ -1193,3 +1146,4 @@ export default function HomeContent({
       </section>
     </>
   )
+}

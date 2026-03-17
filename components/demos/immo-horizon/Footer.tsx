@@ -95,7 +95,7 @@ export function IHFooter() {
                   className="flex items-center gap-2"
                   style={{ color: 'rgba(255,255,255,0.60)', fontSize: 15 }}
                 >
-                  <MapPin size={12} style={{ opacity: 0.5 }} />
+                  <MapPin size={12} style={{ opacity: 0.40 }} />
                   {z}
                 </span>
               ))}
@@ -129,14 +129,14 @@ export function IHFooter() {
               <a
                 href="#"
                 className="transition-opacity hover:opacity-80"
-                style={{ color: 'rgba(255,255,255,0.45)', fontSize: 13 }}
+                style={{ color: 'rgba(255,255,255,0.40)', fontSize: 13 }}
               >
                 Mentions légales
               </a>
               <a
                 href="#"
                 className="transition-opacity hover:opacity-80"
-                style={{ color: 'rgba(255,255,255,0.45)', fontSize: 13 }}
+                style={{ color: 'rgba(255,255,255,0.40)', fontSize: 13 }}
               >
                 Politique de confidentialité
               </a>
@@ -148,7 +148,7 @@ export function IHFooter() {
         <div
           style={{
             height: 1,
-            background: 'rgba(255,255,255,0.10)',
+            background: 'rgba(255,255,255,0.08)',
             marginBottom: 24,
           }}
         />
@@ -159,7 +159,7 @@ export function IHFooter() {
             style={{
               ...mono,
               fontSize: 11,
-              color: 'rgba(255,255,255,0.35)',
+              color: 'rgba(255,255,255,0.40)',
               letterSpacing: '0.02em',
             }}
           >
@@ -172,7 +172,7 @@ export function IHFooter() {
               color: 'var(--ih-accent)',
               letterSpacing: '0.02em',
               padding: '4px 12px',
-              border: '1px solid rgba(200,169,110,0.30)',
+              border: '1px solid rgba(200,169,110,0.25)',
               borderRadius: 6,
             }}
           >

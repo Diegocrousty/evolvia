@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone } from 'lucide-react'
 
 const NAV_LINKS = [
-  { href: '#biens', label: 'Acheter' },
   { href: '#estimation', label: 'Vendre' },
+  { href: '#biens', label: 'Acheter' },
   { href: '#equipe', label: 'Notre équipe' },
   { href: '#contact', label: 'Contact' },
 ]
@@ -69,7 +69,7 @@ export function IHNavbar() {
                 fontSize: 13,
                 color: scrolled
                   ? 'var(--ih-text-secondary)'
-                  : 'rgba(255,255,255,0.70)',
+                  : 'rgba(255,255,255,0.82)',
               }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.color = scrolled
@@ -79,7 +79,7 @@ export function IHNavbar() {
               onMouseLeave={(e) =>
                 (e.currentTarget.style.color = scrolled
                   ? 'var(--ih-text-secondary)'
-                  : 'rgba(255,255,255,0.70)')
+                  : 'rgba(255,255,255,0.82)')
               }
             >
               {link.label}
@@ -107,13 +107,13 @@ export function IHNavbar() {
             style={{
               ...body500,
               fontSize: 13,
-              background: 'var(--ih-accent)',
+              background: 'var(--ih-primary)',
               color: '#ffffff',
               borderRadius: 11,
               padding: '8px 16px',
             }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.background = 'var(--ih-accent-hover)')
+              (e.currentTarget.style.background = 'var(--ih-primary-hover)')
             }
             onMouseLeave={(e) =>
               (e.currentTarget.style.background = 'var(--ih-accent)')
@@ -127,16 +127,16 @@ export function IHNavbar() {
         <div className="flex md:hidden items-center gap-3">
           <a
             href="tel:+33556000000"
-            className="p-2"
-            style={{ color: scrolled ? 'var(--ih-primary)' : '#ffffff' }}
+            className="flex items-center justify-center"
+            style={{ color: scrolled ? 'var(--ih-primary)' : '#ffffff', width: 44, height: 44 }}
             aria-label="Appeler"
           >
             <Phone size={20} />
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2"
-            style={{ color: scrolled ? 'var(--ih-text)' : '#ffffff' }}
+            className="flex items-center justify-center"
+            style={{ color: scrolled ? 'var(--ih-text)' : '#ffffff', width: 44, height: 44 }}
             aria-label="Menu"
             aria-expanded={mobileOpen}
           >
@@ -183,7 +183,7 @@ export function IHNavbar() {
                 style={{
                   ...body500,
                   fontSize: 15,
-                  background: 'var(--ih-accent)',
+                  background: 'var(--ih-primary)',
                   color: '#ffffff',
                   borderRadius: 11,
                   padding: '12px 24px',
