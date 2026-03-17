@@ -167,7 +167,7 @@ export default function ServicesPage() {
           {services.map((service, index) => {
             const num = String(index + 1).padStart(2, '0')
             return (
-              <EDAnimatedSection key={service.title} delay={index * 0.5}>
+              <EDAnimatedSection key={service.title} delay={index * 0.08}>
                 {/* Divider above every item */}
                 <hr style={divider} />
 

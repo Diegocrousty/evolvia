@@ -3,7 +3,7 @@ import RealisationsContent from './content'
 
 const PROJECT_QUERIES = [
   { query: 'electrical panel renovation residential', width: 800, height: 500 },
-  { query: 'smart home automation living room', width: 800, height: 500 },
+  { query: 'smart home tablet wall panel control domotique', width: 800, height: 500 },
   { query: 'electric vehicle charging station home garage', width: 800, height: 500 },
   { query: 'electrical safety inspection multimeter', width: 800, height: 500 },
   { query: 'solar panels residential roof installation', width: 800, height: 500 },

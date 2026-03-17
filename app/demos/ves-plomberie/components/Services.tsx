@@ -5,20 +5,20 @@ import { motion } from 'framer-motion'
 
 const services = [
   {
-    title: 'Dépannage urgent',
-    description: 'Fuite, canalisation bouchée, panne eau chaude. Intervention en moins d\'1h sur Paris.',
+    title: 'Dépannage urgence',
+    description: 'Fuite d\'eau, canalisation bouchée, mécanisme WC, panne eau chaude. Votre plombier urgence Lyon intervient sous 2h.',
     price: 'Devis gratuit',
-    badge: 'Disponible 24h/24',
+    badge: 'Réactif 7j/7',
   },
   {
     title: 'Rénovation salle de bain',
-    description: 'De la conception à la finition. Devis gratuit et travaux garantis.',
+    description: 'De la conception à la finition. Douche à l\'italienne, remplacement baignoire, carrelage. Partenaire Aubade — accès showrooms.',
     price: 'Devis gratuit',
   },
   {
-    title: 'Installation & entretien',
-    description: 'Robinetterie, WC, cumulus, chaudière. Matériaux pro, finitions soignées.',
-    price: 'À partir de 80€',
+    title: 'Chauffage & chaudière',
+    description: 'Entretien, dépannage et remplacement de chaudière. Installation chauffage central, plancher chauffant.',
+    price: 'Devis gratuit',
   },
 ]
 
@@ -32,7 +32,7 @@ export default function Services({ images }: { images: ServiceImage[] }) {
     <section
       id="services"
       style={{
-        backgroundColor: 'var(--pm-bg)',
+        backgroundColor: 'var(--vp-bg)',
         paddingTop: '96px',
         paddingBottom: '96px',
       }}
@@ -54,9 +54,9 @@ export default function Services({ images }: { images: ServiceImage[] }) {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2
-            className="pm-display"
+            className="vp-display"
             style={{
-              color: 'var(--pm-primary)',
+              color: 'var(--vp-primary)',
               fontSize: '32px',
               lineHeight: 1.15,
               letterSpacing: '-0.01em',
@@ -67,21 +67,21 @@ export default function Services({ images }: { images: ServiceImage[] }) {
           </h2>
           <p
             style={{
-              color: 'var(--pm-text-secondary)',
+              color: 'var(--vp-text-secondary)',
               fontSize: '17px',
               lineHeight: 1.6,
               maxWidth: '420px',
             }}
           >
-            Intervention rapide sur tous types de travaux de plomberie
+            Plomberie, chauffage, rénovation — on s&apos;occupe de tout
           </p>
         </motion.div>
 
-        {/* SKILL: Grid responsive 1 col mobile, 2 col tablet, 3 col desktop */}
+        {/* SKILL: Grid responsive 1 col mobile, asymmetric desktop */}
         <div className="grid grid-cols-1 md:grid-cols-12" style={{ gap: '24px' }}>
           {/* Featured: Dépannage urgent — spans 7 cols */}
           <motion.div
-            className="pm-card overflow-hidden md:col-span-7"
+            className="vp-card overflow-hidden md:col-span-7"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -100,14 +100,14 @@ export default function Services({ images }: { images: ServiceImage[] }) {
             )}
             <div style={{ padding: '24px' }}>
               {services[0].badge && (
-                <span className="pm-badge-info inline-block" style={{ marginBottom: '12px' }}>
+                <span className="vp-badge-info inline-block" style={{ marginBottom: '12px' }}>
                   {services[0].badge}
                 </span>
               )}
               <h3
-                className="pm-display"
+                className="vp-display"
                 style={{
-                  color: 'var(--pm-primary)',
+                  color: 'var(--vp-primary)',
                   fontSize: '24px',
                   lineHeight: 1.3,
                   marginBottom: '8px',
@@ -117,7 +117,7 @@ export default function Services({ images }: { images: ServiceImage[] }) {
               </h3>
               <p
                 style={{
-                  color: 'var(--pm-text-secondary)',
+                  color: 'var(--vp-text-secondary)',
                   fontSize: '15px',
                   lineHeight: 1.7,
                   maxWidth: '400px',
@@ -126,7 +126,7 @@ export default function Services({ images }: { images: ServiceImage[] }) {
               >
                 {services[0].description}
               </p>
-              <a href="#devis" className="pm-service-link">
+              <a href="#devis" className="vp-service-link">
                 {services[0].price} →
               </a>
             </div>
@@ -139,7 +139,7 @@ export default function Services({ images }: { images: ServiceImage[] }) {
               return (
                 <motion.div
                   key={service.title}
-                  className="pm-card overflow-hidden flex-1"
+                  className="vp-card overflow-hidden flex-1"
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
@@ -165,7 +165,7 @@ export default function Services({ images }: { images: ServiceImage[] }) {
                       <h3
                         className="font-semibold"
                         style={{
-                          color: 'var(--pm-primary)',
+                          color: 'var(--vp-primary)',
                           fontSize: '17px',
                           lineHeight: 1.6,
                           marginBottom: '4px',
@@ -175,7 +175,7 @@ export default function Services({ images }: { images: ServiceImage[] }) {
                       </h3>
                       <p
                         style={{
-                          color: 'var(--pm-text-secondary)',
+                          color: 'var(--vp-text-secondary)',
                           fontSize: '15px',
                           lineHeight: 1.7,
                           marginBottom: '12px',
@@ -183,7 +183,7 @@ export default function Services({ images }: { images: ServiceImage[] }) {
                       >
                         {service.description}
                       </p>
-                      <a href="#devis" className="pm-service-link" style={{ fontSize: '13px' }}>
+                      <a href="#devis" className="vp-service-link" style={{ fontSize: '13px' }}>
                         {service.price} →
                       </a>
                     </div>
@@ -193,6 +193,53 @@ export default function Services({ images }: { images: ServiceImage[] }) {
             })}
           </div>
         </div>
+
+        {/* Additional services — compact inline tags (avoids 3-card grid anti-pattern) */}
+        <motion.div
+          style={{
+            marginTop: '32px',
+            padding: '24px 32px',
+            backgroundColor: 'var(--vp-bg-alt)',
+            borderRadius: '12px',
+            border: '1px solid var(--vp-border)',
+          }}
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        >
+          <span
+            className="block uppercase font-bold"
+            style={{
+              color: 'var(--vp-text-muted)',
+              fontSize: '11px',
+              letterSpacing: '0.08em',
+              marginBottom: '16px',
+            }}
+          >
+            Également disponible
+          </span>
+          <div className="flex flex-wrap" style={{ gap: '12px' }}>
+            {['Recherche de fuite', 'Chauffe-eau & ballon', 'Mécanisme WC', 'Installation tuyauterie', 'Robinetterie', 'Détartrage'].map((s) => (
+              <a
+                key={s}
+                href="#devis"
+                className="inline-flex items-center"
+                style={{
+                  padding: '8px 16px',
+                  backgroundColor: 'var(--vp-white)',
+                  border: '1px solid var(--vp-border)',
+                  borderRadius: '8px',
+                  color: 'var(--vp-primary)',
+                  fontSize: '15px',
+                  fontWeight: 600,
+                }}
+              >
+                {s}
+              </a>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )

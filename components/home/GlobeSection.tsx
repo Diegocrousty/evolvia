@@ -42,18 +42,18 @@ export function GlobeSection() {
           </p>
         </AnimatedSection>
 
-        {/* ── Globe container — centered, flush to bottom ── */}
-        <div className="relative flex items-center justify-center" style={{ minHeight: 420 }}>
+        {/* ── Globe container — centered ── */}
+        <div className="relative flex items-center justify-center" style={{ minHeight: 300 }}>
           {/* Pulse rings expanding outward from globe center */}
           {isInView && (
             <>
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ top: '10%' }}>
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="globe-pulse-ring globe-pulse-ring--1" />
               </div>
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ top: '10%' }}>
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="globe-pulse-ring globe-pulse-ring--2" />
               </div>
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ top: '10%' }}>
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="globe-pulse-ring globe-pulse-ring--3" />
               </div>
             </>
@@ -62,10 +62,8 @@ export function GlobeSection() {
           {/* Amber glow surrounding globe 360° */}
           {isInView && (
             <div
-              className="absolute pointer-events-none globe-beacon"
+              className="absolute pointer-events-none globe-beacon w-[280px] h-[280px] md:w-[420px] md:h-[420px]"
               style={{
-                width: 420,
-                height: 420,
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
@@ -77,23 +75,23 @@ export function GlobeSection() {
             />
           )}
 
-          {/* Globe — shifted down, bottom fades into background */}
+          {/* Globe */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-full max-w-[340px] md:max-w-[480px] lg:max-w-[560px] aspect-square rounded-full overflow-hidden"
+            className="relative z-10 w-[280px] h-[280px] md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px] rounded-full overflow-hidden"
           >
             <Globe
               className="w-full h-full"
-              width={560}
-              height={560}
+              width={520}
+              height={520}
             />
           </motion.div>
 
           {/* Expansion rays — 4 subtle amber lines radiating from center */}
           {isInView && (
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ top: '10%' }}>
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="globe-rays">
                 <div className="globe-ray globe-ray--1" />
                 <div className="globe-ray globe-ray--2" />

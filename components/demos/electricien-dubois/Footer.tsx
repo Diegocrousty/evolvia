@@ -41,7 +41,7 @@ export function EDFooter() {
               Installation, mise aux normes, domotique.
             </p>
             <div className="flex flex-wrap gap-2">
-              {['Qualibat RGE', 'BR/B2V', 'IRVE'].map((cert) => (
+              {['Qualifelec RGE', 'NF C 15-100', 'IRVE'].map((cert) => (
                 <span
                   key={cert}
                   className="text-xs px-2 py-1"
@@ -53,7 +53,7 @@ export function EDFooter() {
                     background: 'var(--ed-badge-bg)',
                     border: '1px solid var(--ed-badge-border)',
                     color: 'var(--ed-primary)',
-                    borderRadius: '4px',
+                    borderRadius: '6px',
                   }}
                 >
                   {cert}
@@ -121,7 +121,7 @@ export function EDFooter() {
             </p>
             <ul className="flex flex-col gap-3">
               <li className="flex items-center gap-2">
-                <Phone size={14} style={{ color: 'var(--ed-accent)' }} />
+                <Phone size={14} style={{ color: 'var(--ed-primary)' }} />
                 <a
                   href="tel:0745678901"
                   className="text-sm hover:text-[var(--ed-primary)] transition-colors"
@@ -131,7 +131,7 @@ export function EDFooter() {
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail size={14} style={{ color: 'var(--ed-accent)' }} />
+                <Mail size={14} style={{ color: 'var(--ed-primary)' }} />
                 <span
                   className="text-sm"
                   style={{ color: 'var(--ed-text-secondary)' }}
@@ -140,7 +140,7 @@ export function EDFooter() {
                 </span>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin size={14} style={{ color: 'var(--ed-accent)' }} />
+                <MapPin size={14} style={{ color: 'var(--ed-primary)' }} />
                 <span
                   className="text-sm"
                   style={{ color: 'var(--ed-text-secondary)' }}
@@ -149,7 +149,7 @@ export function EDFooter() {
                 </span>
               </li>
               <li className="flex items-center gap-2">
-                <Clock size={14} style={{ color: 'var(--ed-accent)' }} />
+                <Clock size={14} style={{ color: 'var(--ed-primary)' }} />
                 <span
                   className="text-sm"
                   style={{ color: 'var(--ed-text-secondary)' }}

@@ -7,7 +7,11 @@
       "Bash(export PATH=\"$PATH:/c/Program Files/nodejs:/c/Users/diego/AppData/Roaming/npm\")",
       "Bash(find \"C:/Users/diego/Desktop/Claude & Projets\" -maxdepth 3 -name \".obsidian\" -type d)",
       "mcp__Claude_Preview__preview_start",
-      "Bash(ls \"C:/Users/diego/Desktop/Claude & Projets/Evolvia/\" --ignore=node_modules --ignore=.next -la)"
+      "Bash(ls \"C:/Users/diego/Desktop/Claude & Projets/Evolvia/\" --ignore=node_modules --ignore=.next -la)",
+      "Bash(ls \"C:/Users/diego/Desktop/Claude & Projets/Evolvia/app/demos/\")",
+      "Bash(find \"C:/Users/diego/Desktop/Claude & Projets/Evolvia/app/demos/electricien-dubois\" -type f)",
+      "Bash(find \"C:/Users/diego/Desktop/Claude & Projets/Evolvia/app/demos/plomberie-martin\" -type f)",
+      "Bash(node ./node_modules/next/dist/bin/next build)"
     ]
   }
 }

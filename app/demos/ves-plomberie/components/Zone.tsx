@@ -2,17 +2,15 @@
 
 import { motion } from 'framer-motion'
 
-const paris = [
-  'Paris 1er', 'Paris 2e', 'Paris 3e', 'Paris 4e', 'Paris 5e',
-  'Paris 6e', 'Paris 7e', 'Paris 8e', 'Paris 9e', 'Paris 10e',
-  'Paris 11e', 'Paris 12e', 'Paris 13e', 'Paris 14e', 'Paris 15e',
-  'Paris 16e', 'Paris 17e', 'Paris 18e', 'Paris 19e', 'Paris 20e',
+const lyonArrondissements = [
+  'Lyon 1er', 'Lyon 2e', 'Lyon 3e', 'Lyon 4e', 'Lyon 5e',
+  'Lyon 6e', 'Lyon 7e', 'Lyon 8e', 'Lyon 9e',
 ]
 
-const banlieue = [
-  'Vincennes', 'Montreuil', 'Bagnolet', 'Saint-Denis',
-  'Aubervilliers', 'Nanterre', 'Boulogne', 'Issy',
-  'Montrouge', 'Ivry',
+const agglomeration = [
+  'Villeurbanne', 'Caluire', 'Écully', 'Tassin',
+  'Oullins', 'Bron', 'Vénissieux', 'Saint-Fons',
+  'Vaulx-en-Velin', 'Rillieux',
 ]
 
 export default function Zone() {
@@ -20,7 +18,7 @@ export default function Zone() {
     <section
       id="zone"
       style={{
-        backgroundColor: 'var(--pm-primary)',
+        backgroundColor: 'var(--vp-primary)',
         paddingTop: '64px',
         paddingBottom: '64px',
       }}
@@ -41,7 +39,7 @@ export default function Zone() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2
-            className="pm-display"
+            className="vp-display"
             style={{
               color: '#fff',
               fontSize: '32px',
@@ -57,15 +55,15 @@ export default function Zone() {
               color: 'rgba(255, 255, 255, 0.60)',
               fontSize: '17px',
               lineHeight: 1.6,
-              maxWidth: '400px',
+              maxWidth: '420px',
               marginBottom: '48px',
             }}
           >
-            On intervient dans tout Paris et la petite couronne — Urgence &lt; 2h, planifié sous 48h
+            On intervient dans tout Lyon et l&apos;agglomération — Urgence sous 2h, planifié sous 48h
           </p>
         </motion.div>
 
-        {/* Paris intra-muros */}
+        {/* Lyon intra-muros */}
         <motion.div
           style={{ marginBottom: '32px' }}
           initial={{ opacity: 0 }}
@@ -83,16 +81,16 @@ export default function Zone() {
               marginBottom: '12px',
             }}
           >
-            Paris intra-muros
+            Lyon intra-muros
           </span>
           <div className="flex flex-wrap" style={{ gap: '8px' }}>
-            {paris.map((zone) => (
-              <span key={zone} className="pm-zone-badge">{zone}</span>
+            {lyonArrondissements.map((zone) => (
+              <span key={zone} className="vp-zone-badge">{zone}</span>
             ))}
           </div>
         </motion.div>
 
-        {/* Petite couronne */}
+        {/* Agglomération */}
         <motion.div
           style={{ marginBottom: '48px' }}
           initial={{ opacity: 0 }}
@@ -110,11 +108,11 @@ export default function Zone() {
               marginBottom: '12px',
             }}
           >
-            Petite couronne (92 · 93 · 94)
+            Agglomération lyonnaise
           </span>
           <div className="flex flex-wrap" style={{ gap: '8px' }}>
-            {banlieue.map((zone) => (
-              <span key={zone} className="pm-zone-badge">{zone}</span>
+            {agglomeration.map((zone) => (
+              <span key={zone} className="vp-zone-badge">{zone}</span>
             ))}
           </div>
         </motion.div>
@@ -126,7 +124,7 @@ export default function Zone() {
             lineHeight: 1.7,
           }}
         >
-          Déplacement gratuit — Devis sans engagement — Réponse sous 2h
+          Devis gratuit — Sans engagement — Réponse sous 24h
         </p>
       </div>
     </section>

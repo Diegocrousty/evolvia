@@ -263,7 +263,7 @@ export default function ContactPage() {
               <form
                 onSubmit={handleSubmit}
               >
-                {/* Prénom + Nom */}
+                {/* Prénom + Ville (row) */}
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
                     <label htmlFor="prenom" style={{ ...lbl, display: 'block', color: 'var(--ed-text-secondary)', marginBottom: 8 }}>
@@ -281,14 +281,14 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="nom" style={{ ...lbl, display: 'block', color: 'var(--ed-text-secondary)', marginBottom: 8 }}>
-                      Nom
+                    <label htmlFor="ville" style={{ ...lbl, display: 'block', color: 'var(--ed-text-secondary)', marginBottom: 8 }}>
+                      Ville
                     </label>
                     <input
                       type="text"
-                      id="nom"
-                      name="nom"
-                      placeholder="Dupont"
+                      id="ville"
+                      name="ville"
+                      placeholder="Lyon 3e"
                       required
                       style={inputStyle}
                       onFocus={handleFocus}
@@ -297,38 +297,21 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Email + Téléphone */}
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label htmlFor="email" style={{ ...lbl, display: 'block', color: 'var(--ed-text-secondary)', marginBottom: 8 }}>
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="jean@exemple.fr"
-                      required
-                      style={inputStyle}
-                      onFocus={handleFocus}
-                      onBlur={handleBlur}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="telephone" style={{ ...lbl, display: 'block', color: 'var(--ed-text-secondary)', marginBottom: 8 }}>
-                      Téléphone
-                    </label>
-                    <input
-                      type="tel"
-                      id="telephone"
-                      name="telephone"
-                      placeholder="07 00 00 00 00"
-                      required
-                      style={inputStyle}
-                      onFocus={handleFocus}
-                      onBlur={handleBlur}
-                    />
-                  </div>
+                {/* Téléphone */}
+                <div className="mb-4">
+                  <label htmlFor="telephone" style={{ ...lbl, display: 'block', color: 'var(--ed-text-secondary)', marginBottom: 8 }}>
+                    Téléphone
+                  </label>
+                  <input
+                    type="tel"
+                    id="telephone"
+                    name="telephone"
+                    placeholder="07 00 00 00 00"
+                    required
+                    style={inputStyle}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                  />
                 </div>
 
                 {/* Type de prestation */}
@@ -353,41 +336,25 @@ export default function ContactPage() {
                     onBlur={handleBlur}
                   >
                     <option value="">Sélectionnez une prestation</option>
+                    <option value="urgence">Dépannage / Urgence</option>
                     <option value="installation">Installation électrique</option>
                     <option value="normes">Mise aux normes</option>
+                    <option value="tableau">Tableau électrique</option>
+                    <option value="borne-ve">Borne de recharge IRVE</option>
                     <option value="domotique">Domotique</option>
-                    <option value="borne-ve">Borne de recharge VE</option>
-                    <option value="solaires">Panneaux solaires</option>
-                    <option value="urgence">Dépannage / Urgence</option>
                     <option value="autre">Autre</option>
                   </select>
                 </div>
 
-                {/* Adresse des travaux */}
-                <div className="mb-4">
-                  <label htmlFor="adresse" style={{ ...lbl, display: 'block', color: 'var(--ed-text-secondary)', marginBottom: 8 }}>
-                    Adresse des travaux
-                  </label>
-                  <input
-                    type="text"
-                    id="adresse"
-                    name="adresse"
-                    placeholder="12 rue de la République, 69001 Lyon"
-                    style={inputStyle}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                  />
-                </div>
-
-                {/* Description du projet */}
+                {/* Description (optionnel) */}
                 <div className="mb-6">
                   <label htmlFor="description" style={{ ...lbl, display: 'block', color: 'var(--ed-text-secondary)', marginBottom: 8 }}>
-                    Description du projet
+                    Description <span style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0, opacity: 0.6 }}>(optionnel)</span>
                   </label>
                   <textarea
                     id="description"
                     name="description"
-                    rows={4}
+                    rows={3}
                     placeholder="Décrivez votre projet ou votre besoin..."
                     style={{
                       ...inputStyle,

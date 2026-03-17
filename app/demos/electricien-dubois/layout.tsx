@@ -1,3 +1,4 @@
+import './demo.css'
 import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import type { Metadata } from 'next'
 import { EDNavbar } from '@/components/demos/electricien-dubois/Navbar'

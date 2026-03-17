@@ -12,7 +12,7 @@ export default function Hero({ image }: HeroProps) {
   return (
     <section
       className="relative flex items-center overflow-hidden"
-      style={{ backgroundColor: 'var(--pm-primary)', minHeight: '88vh' }}
+      style={{ backgroundColor: 'var(--vp-primary)', minHeight: 'min(88vh, 720px)' }}
     >
       {/* Background image */}
       <Image
@@ -53,17 +53,17 @@ export default function Hero({ image }: HeroProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Badge urgence — dark blue, NOT accent */}
+          {/* Badge — dark blue, NOT accent */}
           <span
-            className="pm-badge-info inline-block"
+            className="vp-badge-info inline-block"
             style={{ letterSpacing: '0.12em', marginBottom: '32px' }}
           >
-            Urgence 24h/24 — Intervention &lt; 1h
+            Dépannage rapide · Lyon & agglomération
           </span>
 
           {/* H1 — 48px desktop / 32px mobile (échelle Design System) */}
           <h1
-            className="pm-display pm-hero-h1"
+            className="vp-display vp-hero-h1"
             style={{
               color: '#fff',
               letterSpacing: '-0.02em',
@@ -72,10 +72,10 @@ export default function Hero({ image }: HeroProps) {
           >
             Votre plombier<br />
             de confiance<br className="hidden md:block" />
-            <span style={{ fontWeight: 600 }}> à Paris</span>
+            <span style={{ fontWeight: 600 }}> à Lyon</span>
           </h1>
 
-          {/* Trust line — opacity 82% */}
+          {/* Trust line — opacity 82% — REAL data */}
           <div
             className="flex flex-wrap items-center"
             style={{
@@ -88,14 +88,14 @@ export default function Hero({ image }: HeroProps) {
           >
             <span className="flex items-center" style={{ gap: '4px' }}>
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} size={13} fill="var(--pm-star)" stroke="none" aria-hidden="true" />
+                <Star key={i} size={13} fill="var(--vp-star)" stroke="none" aria-hidden="true" />
               ))}
-              <span style={{ marginLeft: '4px' }}>4.8/5 — 127 avis</span>
+              <span style={{ marginLeft: '4px' }}>4.9/5 — 110 avis</span>
             </span>
             <span style={{ color: 'rgba(255,255,255,0.25)' }}>·</span>
-            <span>15 ans d&apos;expérience</span>
+            <span>5 ans d&apos;expérience</span>
             <span style={{ color: 'rgba(255,255,255,0.25)' }}>·</span>
-            <span>Qualibat certifié</span>
+            <span>Assurance décennale</span>
           </div>
 
           {/* Subtitle — 17px Body+ — opacity 82% */}
@@ -108,24 +108,24 @@ export default function Hero({ image }: HeroProps) {
               marginBottom: '48px',
             }}
           >
-            Dépannage en 1h, rénovation clé-en-main, installation.
-            On intervient dans tout Paris et petite couronne.
+            Dépannage plomberie, rénovation salle de bain, chauffage, recherche de fuite.
+            Devis gratuit sous 24h — intervention rapide sur tout Lyon et sa périphérie.
           </p>
 
-          {/* CTAs — padding géré par CSS classes */}
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row" style={{ gap: '16px' }}>
             <a
-              href="tel:0612345678"
-              aria-label="Appeler maintenant au 06 12 34 56 78"
-              className="pm-cta-primary inline-flex items-center justify-center hover:scale-[1.02] active:scale-[0.97]"
+              href="tel:0624446176"
+              aria-label="Appeler maintenant au 06 24 44 61 76"
+              className="vp-cta-primary inline-flex items-center justify-center hover:scale-[1.02] active:scale-[0.97]"
               style={{ gap: '12px' }}
             >
               <Phone size={17} />
-              Appeler — 06 12 34 56 78
+              Appeler — 06 24 44 61 76
             </a>
             <a
               href="#devis"
-              className="pm-cta-secondary-light inline-flex items-center justify-center"
+              className="vp-cta-secondary-light inline-flex items-center justify-center"
               style={{ gap: '12px' }}
             >
               <FileText size={17} />
@@ -135,7 +135,7 @@ export default function Hero({ image }: HeroProps) {
         </motion.div>
       </div>
 
-      {/* Photo credit — 11px Caption — opacity 25% */}
+      {/* Photo credit */}
       <div
         className="absolute"
         style={{

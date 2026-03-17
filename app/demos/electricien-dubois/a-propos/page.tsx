@@ -261,7 +261,7 @@ export default function AProposPage() {
             {values.map((value, i) => {
               const num = String(i + 1).padStart(2, '0')
               return (
-                <EDAnimatedSection key={value.title} delay={i * 0.5}>
+                <EDAnimatedSection key={value.title} delay={i * 0.08}>
                   <div className="py-8 flex items-start gap-6 md:gap-10">
                     <span
                       className="flex-shrink-0"

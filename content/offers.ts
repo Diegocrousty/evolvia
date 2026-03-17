@@ -61,14 +61,29 @@ export const offers = [
   },
 ] as const
 
-export const retainer = {
+export const retainerSite = {
+  name: 'Maintenance site',
+  tagline: 'Gardez votre site à jour et performant.',
   price: 150,
   period: 'mois',
   features: [
-    'Mises à jour contenu',
+    'Modifications incluses chaque mois',
     'Backup mensuel',
     'Rapport de performance',
     'Support prioritaire',
+  ],
+}
+
+export const retainerChatbot = {
+  name: 'Maintenance chatbot',
+  tagline: 'Votre assistant IA toujours à jour.',
+  price: 249,
+  period: 'mois',
+  features: [
+    'Mise à jour base de connaissances',
+    'Monitoring des conversations',
+    'Optimisation des réponses',
+    'Coûts API inclus',
   ],
 }
 

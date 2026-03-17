@@ -1,14 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react'
+import { Phone, MapPin, Clock, Send, Mail } from 'lucide-react'
 
 const prestations = [
   'Dépannage urgent',
   'Rénovation salle de bain',
-  'Installation robinetterie',
-  'Chauffe-eau / cumulus',
-  'Débouchage',
+  'Recherche de fuite',
+  'Chauffage / chaudière',
+  'Chauffe-eau / ballon',
+  'Mécanisme WC',
+  'Installation plomberie',
   'Autre',
 ]
 
@@ -17,7 +19,7 @@ export default function Formulaire() {
     <section
       id="contact"
       style={{
-        backgroundColor: 'var(--pm-bg-alt)',
+        backgroundColor: 'var(--vp-bg-alt)',
         paddingTop: '64px',
         paddingBottom: '96px',
       }}
@@ -39,9 +41,9 @@ export default function Formulaire() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2
-            className="pm-display"
+            className="vp-display"
             style={{
-              color: 'var(--pm-primary)',
+              color: 'var(--vp-primary)',
               fontSize: '32px',
               lineHeight: 1.15,
               letterSpacing: '-0.01em',
@@ -52,12 +54,12 @@ export default function Formulaire() {
           </h2>
           <p
             style={{
-              color: 'var(--pm-text-secondary)',
+              color: 'var(--vp-text-secondary)',
               fontSize: '17px',
               lineHeight: 1.6,
             }}
           >
-            Réponse garantie sous 24h — Déplacement gratuit
+            Réponse garantie sous 24h — Devis sans engagement
           </p>
         </motion.div>
 
@@ -71,56 +73,81 @@ export default function Formulaire() {
           >
             <div className="flex flex-col" style={{ gap: '16px', marginBottom: '32px' }}>
               <a
-                href="tel:0612345678"
-                aria-label="Appeler le 06 12 34 56 78"
+                href="tel:0624446176"
+                aria-label="Appeler le 06 24 44 61 76"
                 className="flex items-center font-bold"
                 style={{
-                  color: 'var(--pm-accent)',
+                  color: 'var(--vp-accent)',
                   fontSize: '20px',
                   lineHeight: 1.35,
                   gap: '12px',
                 }}
               >
                 <Phone size={20} />
-                06 12 34 56 78
-              </a>
-              <a
-                href="mailto:contact@plomberie-martin.fr"
-                className="pm-link flex items-center"
-                style={{ fontSize: '15px', gap: '12px' }}
-              >
-                <Mail size={17} />
-                contact@plomberie-martin.fr
+                06 24 44 61 76
               </a>
               <p
                 className="flex items-center"
                 style={{
-                  color: 'var(--pm-text-secondary)',
+                  color: 'var(--vp-text-secondary)',
                   fontSize: '15px',
                   gap: '12px',
                 }}
               >
                 <MapPin size={17} />
-                Paris et petite couronne (75/92/93/94)
+                51 Cours Franklin Roosevelt, 69006 Lyon
               </p>
+              <a
+                href="mailto:ves-plomberie@outlook.fr"
+                className="flex items-center"
+                style={{
+                  color: 'var(--vp-text-secondary)',
+                  fontSize: '15px',
+                  gap: '12px',
+                }}
+              >
+                <Mail size={17} />
+                ves-plomberie@outlook.fr
+              </a>
               <p
                 className="flex items-center"
                 style={{
-                  color: 'var(--pm-text-secondary)',
+                  color: 'var(--vp-text-secondary)',
                   fontSize: '15px',
                   gap: '12px',
                 }}
               >
                 <Clock size={17} />
-                Lun-Sam 8h-19h · Urgences 24h/24
+                Lun-Sam 8h-17h
               </p>
+            </div>
+
+            {/* Google Maps embed — SEO local */}
+            <div
+              className="overflow-hidden"
+              style={{
+                borderRadius: '12px',
+                border: '1px solid var(--vp-border)',
+                marginTop: '24px',
+                height: '200px',
+              }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.5!2d4.8505!3d45.7700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea5e1f0a1b0f%3A0x0!2s51+Cours+Franklin+Roosevelt%2C+69006+Lyon!5e0!3m2!1sfr!2sfr!4v1"
+                width="100%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="VES Plomberie — 51 Cours Franklin Roosevelt, Lyon 6e"
+              />
             </div>
 
             {/* Certifications */}
             <div className="flex flex-wrap" style={{ gap: '8px' }}>
-              <span className="pm-badge-certif">Qualibat</span>
-              <span className="pm-badge-certif">RGE</span>
-              <span className="pm-badge-certif">Garantie décennale</span>
+              <span className="vp-badge-certif">Assurance décennale</span>
+              <span className="vp-badge-certif">SIREN: 894 435 635</span>
             </div>
           </motion.div>
 
@@ -144,14 +171,14 @@ export default function Formulaire() {
                   className="block uppercase font-bold"
                   style={{
                     marginBottom: '4px',
-                    color: 'var(--pm-text-secondary)',
+                    color: 'var(--vp-text-secondary)',
                     fontSize: '11px',
                     letterSpacing: '0.08em',
                   }}
                 >
                   Prénom
                 </label>
-                <input type="text" id="prenom" name="prenom" required placeholder="Jean" className="pm-input" />
+                <input type="text" id="prenom" name="prenom" required placeholder="Ludovic" className="vp-input" />
               </div>
               <div>
                 <label
@@ -159,14 +186,14 @@ export default function Formulaire() {
                   className="block uppercase font-bold"
                   style={{
                     marginBottom: '4px',
-                    color: 'var(--pm-text-secondary)',
+                    color: 'var(--vp-text-secondary)',
                     fontSize: '11px',
                     letterSpacing: '0.08em',
                   }}
                 >
                   Ville
                 </label>
-                <input type="text" id="ville" name="ville" required placeholder="Paris 11e" className="pm-input" />
+                <input type="text" id="ville" name="ville" required placeholder="Lyon 6e" className="vp-input" />
               </div>
             </div>
 
@@ -177,14 +204,14 @@ export default function Formulaire() {
                 className="block uppercase font-bold"
                 style={{
                   marginBottom: '4px',
-                  color: 'var(--pm-text-secondary)',
+                  color: 'var(--vp-text-secondary)',
                   fontSize: '11px',
                   letterSpacing: '0.08em',
                 }}
               >
                 Téléphone
               </label>
-              <input type="tel" id="telephone" name="telephone" required placeholder="06 00 00 00 00" className="pm-input" />
+              <input type="tel" id="telephone" name="telephone" required placeholder="06 00 00 00 00" className="vp-input" />
             </div>
 
             {/* Type de prestation */}
@@ -194,20 +221,20 @@ export default function Formulaire() {
                 className="block uppercase font-bold"
                 style={{
                   marginBottom: '4px',
-                  color: 'var(--pm-text-secondary)',
+                  color: 'var(--vp-text-secondary)',
                   fontSize: '11px',
                   letterSpacing: '0.08em',
                 }}
               >
                 Type de prestation
               </label>
-              <div className="pm-select-wrap">
+              <div className="vp-select-wrap">
                 <select
                   id="prestation"
                   name="prestation"
                   required
                   defaultValue=""
-                  className="pm-input"
+                  className="vp-input"
                   style={{ appearance: 'none' }}
                 >
                   <option value="" disabled>Choisir une prestation</option>
@@ -225,7 +252,7 @@ export default function Formulaire() {
                 className="block uppercase font-bold"
                 style={{
                   marginBottom: '4px',
-                  color: 'var(--pm-text-secondary)',
+                  color: 'var(--vp-text-secondary)',
                   fontSize: '11px',
                   letterSpacing: '0.08em',
                 }}
@@ -237,14 +264,14 @@ export default function Formulaire() {
                 name="message"
                 rows={3}
                 placeholder="Décrivez votre problème..."
-                className="pm-input"
+                className="vp-input"
                 style={{ resize: 'vertical' }}
               />
             </div>
 
             <button
               type="submit"
-              className="pm-cta-primary w-full flex items-center justify-center hover:scale-[1.01] active:scale-[0.98]"
+              className="vp-cta-primary w-full flex items-center justify-center hover:scale-[1.01] active:scale-[0.98]"
               style={{ gap: '12px' }}
             >
               <Send size={17} />
@@ -254,7 +281,7 @@ export default function Formulaire() {
             <p
               className="text-center"
               style={{
-                color: 'var(--pm-text-muted)',
+                color: 'var(--vp-text-muted)',
                 fontSize: '13px',
                 lineHeight: 1.5,
               }}

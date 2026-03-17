@@ -162,13 +162,12 @@ function ProjectCard({
           {project.certCaption && (
             <p
               style={{
-                fontFamily: 'var(--font-heading), sans-serif',
-                fontWeight: 600,
-                textTransform: 'uppercase' as const,
-                letterSpacing: '0.08em',
+                fontFamily: 'var(--font-mono), monospace',
+                fontWeight: 400,
                 fontSize: '11px',
-                color: 'var(--ed-cert-green)',
+                color: 'var(--ed-text-secondary)',
                 marginTop: '12px',
+                opacity: 0.7,
               }}
             >
               {project.certCaption}

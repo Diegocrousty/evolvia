@@ -1,0 +1,57 @@
+/* ═══════════════════════════════════════════════
+   IMMO HORIZON — Démo Pro 1 490€
+   Palette SKILL immobilier : Bleu pétrole #1A3C5E + Or Bordeaux #C8A96E
+   Fonts : Playfair Display (titres) + DM Sans (body) + DM Mono (prix/data)
+   ═══════════════════════════════════════════════ */
+
+/* Reset Evolvia cursor */
+.ih-demo,
+.ih-demo a,
+.ih-demo button,
+.ih-demo input,
+.ih-demo textarea,
+.ih-demo select {
+  cursor: auto !important;
+}
+
+.ih-demo button:hover,
+.ih-demo a:hover {
+  cursor: pointer !important;
+}
+
+/* Selection — or accent */
+.ih-demo ::selection {
+  background: rgba(200, 169, 110, 0.2);
+  color: var(--ih-text);
+}
+
+/* Focus-visible */
+.ih-demo a:focus-visible,
+.ih-demo button:focus-visible,
+.ih-demo input:focus-visible,
+.ih-demo textarea:focus-visible,
+.ih-demo select:focus-visible {
+  outline: 2px solid var(--ih-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth scroll */
+.ih-demo {
+  scroll-behavior: smooth;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ih-demo,
+  .ih-demo * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Footer padding for chatbot widget on mobile */
+@media (max-width: 767px) {
+  .ih-demo footer {
+    padding-bottom: 96px !important;
+  }
+}

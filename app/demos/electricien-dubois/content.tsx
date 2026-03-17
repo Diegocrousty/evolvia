@@ -146,33 +146,19 @@ export default function HomeContent({
           style={{ minHeight: '88vh', paddingTop: 80, paddingBottom: 96 }}
         >
           <EDAnimatedSection>
-            {/* Badge */}
-            <span
-              className="inline-flex items-center gap-2 mb-8"
+            {/* Badge — subtle, not AI slop */}
+            <p
+              className="mb-8"
               style={{
                 ...mono,
                 fontSize: 11,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                background: 'rgba(16,185,129,0.15)',
-                border: '1px solid rgba(16,185,129,0.30)',
-                color: '#6EE7B7',
-                borderRadius: 6,
-                padding: '6px 12px',
+                color: 'rgba(255,255,255,0.50)',
               }}
             >
-              <span
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: '50%',
-                  background: '#10B981',
-                  display: 'inline-block',
-                  flexShrink: 0,
-                }}
-              />
-              Qualifelec RGE · IRVE certifié
-            </span>
+              Qualifelec RGE · IRVE certifié · Lyon & agglomération
+            </p>
 
             <h1
               className="mb-6"
@@ -290,52 +276,17 @@ export default function HomeContent({
           className="max-w-[1100px] mx-auto px-6"
           style={{ paddingTop: 24, paddingBottom: 24 }}
         >
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-            {/* Green cert badges */}
-            {['Qualifelec ✓', 'RGE ✓', 'IRVE ✓', 'NF C 15-100 ✓'].map(
-              (badge) => (
-                <span
-                  key={badge}
-                  style={{
-                    ...mono,
-                    fontSize: 11,
-                    textTransform: 'uppercase' as const,
-                    letterSpacing: '0.08em',
-                    background: 'var(--ed-cert-green)',
-                    color: '#ffffff',
-                    borderRadius: 5,
-                    padding: '4px 10px',
-                    fontWeight: 600,
-                    whiteSpace: 'nowrap' as const,
-                  }}
-                >
-                  {badge}
-                </span>
-              )
-            )}
-
-            {/* Separator visible on larger screens */}
-            <span
-              className="hidden md:block"
-              style={{
-                width: 1,
-                height: 20,
-                background: 'rgba(255,255,255,0.15)',
-                flexShrink: 0,
-              }}
-            />
-
-            <p
-              style={{
-                color: 'rgba(255,255,255,0.60)',
-                fontSize: 13,
-                lineHeight: 1.5,
-                ...h6,
-              }}
-            >
-              Toutes installations conformes · Attestation CONSUEL fournie
-            </p>
-          </div>
+          <p
+            style={{
+              ...mono,
+              fontSize: 11,
+              textTransform: 'uppercase' as const,
+              letterSpacing: '0.08em',
+              color: 'rgba(255,255,255,0.60)',
+            }}
+          >
+            Qualifelec · RGE · IRVE · NF C 15-100 · Attestation CONSUEL fournie
+          </p>
         </div>
       </section>
 

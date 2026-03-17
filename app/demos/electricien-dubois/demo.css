@@ -1,0 +1,52 @@
+/* ═══════════════════════════════════════════════
+   ÉLECTRICIEN DUBOIS — Demo Business 990€
+   Palette SKILL électricien : Bleu nuit #1C3557 + Ambre #F59E0B
+   Fonts : IBM Plex Sans (titres/body) + IBM Plex Mono (labels)
+   ═══════════════════════════════════════════════ */
+
+/* Reset Evolvia cursor */
+.ed-demo,
+.ed-demo a,
+.ed-demo button,
+.ed-demo input,
+.ed-demo textarea,
+.ed-demo select {
+  cursor: auto !important;
+}
+
+.ed-demo button:hover,
+.ed-demo a:hover {
+  cursor: pointer !important;
+}
+
+/* Selection — ambre accent */
+.ed-demo ::selection {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--ed-text);
+}
+
+/* Focus-visible */
+.ed-demo a:focus-visible,
+.ed-demo button:focus-visible,
+.ed-demo input:focus-visible,
+.ed-demo textarea:focus-visible,
+.ed-demo select:focus-visible {
+  outline: 2px solid var(--ed-accent);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ed-demo,
+  .ed-demo * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Footer padding for sticky bar on mobile */
+@media (max-width: 767px) {
+  .ed-demo footer {
+    padding-bottom: 80px !important;
+  }
+}

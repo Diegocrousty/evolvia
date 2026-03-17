@@ -1,81 +1,81 @@
 /* ═══════════════════════════════════════════════
-   PLOMBERIE MARTIN — Demo Starter 490€
+   VES PLOMBERIE — Demo Starter 490€
    Palette SKILL plombier : Bleu marine #1B3A6B + Orange CTA #E8A020
    Fonts : Source Sans 3 (titres) + Nunito (body)
    DESIGN-SYSTEM.md v1.0 — toutes valeurs conformes
    ═══════════════════════════════════════════════ */
 
-.pm-demo {
+.vp-demo {
   scroll-behavior: smooth;
 }
 
 :root {
   /* Fonds — SKILL plombier : fond blanc, surface gris clair */
-  --pm-bg: #FFFFFF;
-  --pm-bg-alt: #F5F7FA;
-  --pm-primary: #1B3A6B;
-  --pm-white: #FFFFFF;
+  --vp-bg: #FFFFFF;
+  --vp-bg-alt: #F5F7FA;
+  --vp-primary: #1B3A6B;
+  --vp-white: #FFFFFF;
 
   /* Texte — SKILL plombier */
-  --pm-text: #1A1A1A;
-  --pm-text-secondary: #5C6B7A;
-  --pm-text-muted: #8B95A1;
+  --vp-text: #1A1A1A;
+  --vp-text-secondary: #5C6B7A;
+  --vp-text-muted: #8B95A1;
 
   /* Accent — SKILL plombier : orange chaud CTA UNIQUEMENT */
-  --pm-accent: #E8A020;
-  --pm-accent-hover: #D4901A;
+  --vp-accent: #E8A020;
+  --vp-accent-hover: #D4901A;
 
   /* Étoiles */
-  --pm-star: #E8A020;
+  --vp-star: #E8A020;
 
   /* Borders — valeurs Design System : 0.08 / 0.15 / 0.25 */
-  --pm-border: rgba(0, 0, 0, 0.08);
-  --pm-border-hover: rgba(0, 0, 0, 0.15);
-  --pm-border-highlight: rgba(0, 0, 0, 0.25);
+  --vp-border: rgba(0, 0, 0, 0.08);
+  --vp-border-hover: rgba(0, 0, 0, 0.15);
+  --vp-border-highlight: rgba(0, 0, 0, 0.25);
 
   /* Cards */
-  --pm-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-  --pm-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --vp-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  --vp-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
 
   /* Easing */
-  --pm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --vp-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ── Display font — Source Sans 3 sans-serif (SKILL plombier : pas de serif) ── */
-.pm-display {
+.vp-display {
   font-family: var(--font-display), 'Source Sans 3', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
 /* Reset Evolvia cursor */
-.pm-demo,
-.pm-demo a,
-.pm-demo button,
-.pm-demo input,
-.pm-demo textarea,
-.pm-demo select {
+.vp-demo,
+.vp-demo a,
+.vp-demo button,
+.vp-demo input,
+.vp-demo textarea,
+.vp-demo select {
   cursor: auto !important;
 }
 
-.pm-demo button:hover,
-.pm-demo a:hover {
+.vp-demo button:hover,
+.vp-demo a:hover {
   cursor: pointer !important;
 }
 
 /* Selection — orange accent */
-.pm-demo ::selection {
+.vp-demo ::selection {
   background: rgba(232, 160, 32, 0.15);
-  color: var(--pm-text);
+  color: var(--vp-text);
 }
 
 /* ── Focus-visible ── */
-.pm-demo a:focus-visible,
-.pm-demo button:focus-visible,
-.pm-demo input:focus-visible,
-.pm-demo textarea:focus-visible,
-.pm-demo select:focus-visible {
-  outline: 2px solid var(--pm-accent);
+.vp-demo a:focus-visible,
+.vp-demo button:focus-visible,
+.vp-demo input:focus-visible,
+.vp-demo textarea:focus-visible,
+.vp-demo select:focus-visible {
+  outline: 2px solid var(--vp-accent);
   outline-offset: 2px;
 }
 
@@ -83,8 +83,8 @@
    Hauteur ~52px → border-radius = 52÷4 = 13px ≈ 12px
    Padding ratio 1:2 : 12px vertical × 24px horizontal
    min-height 48px (tap target mobile per SKILL) */
-.pm-cta-primary {
-  background-color: var(--pm-accent);
+.vp-cta-primary {
+  background-color: var(--vp-accent);
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -93,17 +93,17 @@
   line-height: 1.6;
   padding: 12px 24px;
   min-height: 48px;
-  transition: background-color 0.2s var(--pm-ease), transform 0.2s var(--pm-ease), box-shadow 0.2s;
+  transition: background-color 0.2s var(--vp-ease), transform 0.2s var(--vp-ease), box-shadow 0.2s;
 }
-.pm-cta-primary:hover {
-  background-color: var(--pm-accent-hover);
+.vp-cta-primary:hover {
+  background-color: var(--vp-accent-hover);
   box-shadow: 0 4px 16px rgba(232, 160, 32, 0.25);
 }
 
 /* ── CTA secondary — bleu outline per SKILL ── */
-.pm-cta-secondary {
-  border: 2px solid var(--pm-primary);
-  color: var(--pm-primary);
+.vp-cta-secondary {
+  border: 2px solid var(--vp-primary);
+  color: var(--vp-primary);
   background-color: transparent;
   border-radius: 12px;
   font-weight: 700;
@@ -113,13 +113,13 @@
   min-height: 48px;
   transition: background-color 0.2s, color 0.2s;
 }
-.pm-cta-secondary:hover {
-  background-color: var(--pm-primary);
+.vp-cta-secondary:hover {
+  background-color: var(--vp-primary);
   color: #fff;
 }
 
 /* ── CTA secondary on dark (hero/zone) ── */
-.pm-cta-secondary-light {
+.vp-cta-secondary-light {
   border: 2px solid rgba(255, 255, 255, 0.25);
   color: #fff;
   background-color: transparent;
@@ -131,53 +131,53 @@
   min-height: 48px;
   transition: background-color 0.2s, border-color 0.2s;
 }
-.pm-cta-secondary-light:hover {
+.vp-cta-secondary-light:hover {
   background-color: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.40);
 }
 
 /* ── Cards — border-radius 12px fixe ── */
-.pm-card {
-  background-color: var(--pm-white);
-  border: 1px solid var(--pm-border);
+.vp-card {
+  background-color: var(--vp-white);
+  border: 1px solid var(--vp-border);
   border-radius: 12px;
-  box-shadow: var(--pm-shadow);
-  transition: box-shadow 0.35s var(--pm-ease), transform 0.35s var(--pm-ease);
+  box-shadow: var(--vp-shadow);
+  transition: box-shadow 0.35s var(--vp-ease), transform 0.35s var(--vp-ease);
 }
-.pm-card:hover {
-  box-shadow: var(--pm-shadow-hover);
+.vp-card:hover {
+  box-shadow: var(--vp-shadow-hover);
   transform: translateY(-2px);
 }
 
 /* ── Review cards — border-radius 12px ── */
-.pm-review-card {
-  background-color: var(--pm-bg-alt);
-  border: 1px solid var(--pm-border);
+.vp-review-card {
+  background-color: var(--vp-bg-alt);
+  border: 1px solid var(--vp-border);
   border-radius: 12px;
-  transition: border-color 0.35s var(--pm-ease), transform 0.35s var(--pm-ease);
+  transition: border-color 0.35s var(--vp-ease), transform 0.35s var(--vp-ease);
 }
-.pm-review-card:hover {
-  border-color: var(--pm-border-hover);
+.vp-review-card:hover {
+  border-color: var(--vp-border-hover);
   transform: translateY(-2px);
 }
 
 /* ── Service price links ── */
-.pm-service-link {
-  color: var(--pm-accent);
+.vp-service-link {
+  color: var(--vp-accent);
   font-weight: 700;
   font-size: 15px;
   text-decoration: none;
   transition: color 0.2s;
 }
-.pm-service-link:hover {
-  color: var(--pm-accent-hover);
+.vp-service-link:hover {
+  color: var(--vp-accent-hover);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 /* ── Zone badges ──
    Padding ratio 1:2 : 8px × 16px */
-.pm-zone-badge {
+.vp-zone-badge {
   padding: 8px 16px;
   font-size: 13px;
   font-weight: 600;
@@ -187,39 +187,39 @@
   color: #fff;
   transition: background-color 0.2s, border-color 0.2s;
 }
-.pm-zone-badge:hover {
+.vp-zone-badge:hover {
   background-color: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.25);
 }
 
 /* ── Form inputs — border-radius 8px fixe ── */
-.pm-input {
+.vp-input {
   width: 100%;
   padding: 12px 16px;
-  background-color: var(--pm-white);
-  border: 1px solid var(--pm-border);
+  background-color: var(--vp-white);
+  border: 1px solid var(--vp-border);
   border-radius: 8px;
-  color: var(--pm-text);
+  color: var(--vp-text);
   font-size: 17px;
   line-height: 1.6;
   font-family: var(--font-body), 'Nunito', sans-serif;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-.pm-input:focus {
-  border-color: var(--pm-accent);
+.vp-input:focus {
+  border-color: var(--vp-accent);
   box-shadow: 0 0 0 3px rgba(232, 160, 32, 0.08);
 }
-.pm-input::placeholder {
-  color: var(--pm-text-muted);
+.vp-input::placeholder {
+  color: var(--vp-text-muted);
   opacity: 0.25;
 }
 
 /* ── Select chevron ── */
-.pm-select-wrap {
+.vp-select-wrap {
   position: relative;
 }
-.pm-select-wrap::after {
+.vp-select-wrap::after {
   content: '';
   position: absolute;
   right: 16px;
@@ -229,15 +229,15 @@
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid var(--pm-text-muted);
+  border-top: 5px solid var(--vp-text-muted);
   pointer-events: none;
 }
 
 /* ── Badge certif — bleu marine ── */
-.pm-badge-certif {
+.vp-badge-certif {
   display: inline-block;
   padding: 8px 16px;
-  background-color: var(--pm-primary);
+  background-color: var(--vp-primary);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -247,10 +247,10 @@
 }
 
 /* ── Badge info (non-CTA) — bleu marine ── */
-.pm-badge-info {
+.vp-badge-info {
   display: inline-block;
   padding: 8px 16px;
-  background-color: var(--pm-primary);
+  background-color: var(--vp-primary);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -260,68 +260,68 @@
 }
 
 /* ── Links ── */
-.pm-link {
-  color: var(--pm-text-secondary);
+.vp-link {
+  color: var(--vp-text-secondary);
   transition: color 0.2s;
 }
-.pm-link:hover {
-  color: var(--pm-text);
+.vp-link:hover {
+  color: var(--vp-text);
 }
 
 /* ── Footer links (on dark) ── */
-.pm-footer-link {
+.vp-footer-link {
   color: rgba(255, 255, 255, 0.60);
   transition: color 0.2s;
 }
-.pm-footer-link:hover {
+.vp-footer-link:hover {
   color: rgba(255, 255, 255, 0.82);
 }
 
 /* ── Responsive Hero H1 ── */
-.pm-hero-h1 {
+.vp-hero-h1 {
   font-size: 32px;
   line-height: 1.15;
 }
 @media (min-width: 768px) {
-  .pm-hero-h1 {
+  .vp-hero-h1 {
     font-size: 48px;
     line-height: 1.05;
   }
 }
 
 /* ── Stats — responsive values + divider ── */
-.pm-stat-value {
+.vp-stat-value {
   font-size: 32px;
 }
-.pm-stat-suffix {
+.vp-stat-suffix {
   font-size: 17px;
 }
-.pm-stat-divider {
+.vp-stat-divider {
   border-left: none;
 }
 @media (min-width: 768px) {
-  .pm-stat-value {
+  .vp-stat-value {
     font-size: 48px;
   }
-  .pm-stat-suffix {
+  .vp-stat-suffix {
     font-size: 24px;
   }
-  .pm-stat-divider {
-    border-left: 1px solid var(--pm-border);
+  .vp-stat-divider {
+    border-left: 1px solid var(--vp-border);
   }
 }
 
 /* ── Sticky mobile CTA bar — orange per SKILL ── */
-.pm-sticky-mobile {
+.vp-sticky-mobile {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 50;
   padding: 8px 16px;
-  background-color: var(--pm-accent);
+  background-color: var(--vp-accent);
 }
-.pm-sticky-mobile a {
+.vp-sticky-mobile a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -336,15 +336,15 @@
   background: none;
 }
 @media (min-width: 768px) {
-  .pm-sticky-mobile {
+  .vp-sticky-mobile {
     display: none;
   }
 }
 
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
-  .pm-demo,
-  .pm-demo * {
+  .vp-demo,
+  .vp-demo * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
@@ -352,7 +352,7 @@
 
 /* ── Footer padding for sticky bar on mobile ── */
 @media (max-width: 767px) {
-  .pm-demo footer {
+  .vp-demo footer {
     padding-bottom: 80px !important;
   }
 }
