@@ -14,7 +14,7 @@ const config: Config = {
         'evolvia-surface': 'rgba(240,238,235,0.04)',
         'evolvia-surface-hover': 'rgba(240,238,235,0.08)',
         'evolvia-border': 'rgba(240,238,235,0.08)',
-        'evolvia-border-hover': 'rgba(240,238,235,0.18)',
+        'evolvia-border-hover': 'rgba(240,238,235,0.15)',
 
         /* ── Silver / Chrome (warm tint) ── */
         'evolvia-silver': '#8a8780',
@@ -30,6 +30,27 @@ const config: Config = {
         'evolvia-accent': '#c2620a',
         'evolvia-accent-light': '#a0510a',
         'evolvia-success': '#34d399',
+      },
+      fontSize: {
+        'xxs':  ['11px', { lineHeight: '1.45' }],
+        'xs':   ['13px', { lineHeight: '1.5'  }],
+        'sm':   ['15px', { lineHeight: '1.7'  }],
+        'base': ['17px', { lineHeight: '1.65' }],
+        'lg':   ['20px', { lineHeight: '1.4'  }],
+        'xl':   ['24px', { lineHeight: '1.3'  }],
+        '2xl':  ['32px', { lineHeight: '1.2'  }],
+        '3xl':  ['48px', { lineHeight: '1.1'  }],
+        '4xl':  ['64px', { lineHeight: '1.05' }],
+        '5xl':  ['80px', { lineHeight: '1.0'  }],
+      },
+      borderRadius: {
+        'none': '0px',
+        'xs':   '4px',
+        'sm':   '8px',
+        'md':   '12px',
+        'lg':   '16px',
+        'xl':   '24px',
+        'full': '9999px',
       },
       fontFamily: {
         display: ['var(--font-display)', 'serif'],

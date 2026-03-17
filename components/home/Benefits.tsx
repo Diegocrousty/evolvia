@@ -44,11 +44,11 @@ export function Benefits() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {benefits.map((b, i) => (
             <AnimatedSection key={i} delay={i * 0.1}>
-              <div className="glass-card rounded-2xl p-8 group relative overflow-hidden">
-                <div className="absolute top-4 right-6 font-display text-6xl font-light select-none" style={{ color: 'rgba(194,98,10,0.8)' }}>
+              <div className="glass-card rounded-md p-8 group relative overflow-hidden">
+                <div className="absolute top-4 right-6 font-display text-3xl font-light select-none" style={{ color: 'rgba(194,98,10,0.8)' }}>
                   {b.number}
                 </div>
-                <h3 className="font-display text-2xl font-light text-evolvia-text mb-3">
+                <h3 className="font-display text-xl font-light text-evolvia-text mb-3">
                   {b.title}
                 </h3>
                 <p className="text-evolvia-muted font-body text-sm leading-relaxed">

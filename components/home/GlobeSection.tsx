@@ -27,16 +27,16 @@ export function GlobeSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* ── Text content ── */}
         <AnimatedSection className="text-center mb-16 md:mb-20">
-          <p className="text-xs tracking-[0.35em] uppercase text-evolvia-muted mb-6">
+          <p className="text-xxs tracking-[0.35em] uppercase text-evolvia-muted mb-6">
             Visibilit&eacute; mondiale
           </p>
-          <h2 data-cursor-headline className="font-display text-4xl md:text-6xl lg:text-7xl font-light leading-[1.1] tracking-tight">
+          <h2 data-cursor-headline className="font-display text-2xl md:text-4xl lg:text-5xl font-light leading-[1.05] tracking-tight">
             Pensez local,{' '}
             <span className="text-chrome italic">
               rayonnez global.
             </span>
           </h2>
-          <p className="mt-6 max-w-xl mx-auto text-evolvia-text-secondary text-base md:text-lg font-light leading-relaxed">
+          <p className="mt-6 max-w-xl mx-auto text-evolvia-text-secondary text-sm md:text-base font-light leading-relaxed">
             Votre site professionnel travaille 24h/24&nbsp;&mdash;&nbsp;visible
             partout dans le monde, depuis la France.
           </p>
@@ -113,10 +113,10 @@ export function GlobeSection() {
               { value: '<2s', label: 'Temps de chargement' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-display text-3xl md:text-4xl text-chrome tracking-tight">
+                <p className="font-display text-2xl md:text-3xl text-chrome tracking-tight">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-xs tracking-[0.2em] uppercase text-evolvia-muted">
+                <p className="mt-1 text-xxs tracking-[0.2em] uppercase text-evolvia-muted">
                   {stat.label}
                 </p>
               </div>

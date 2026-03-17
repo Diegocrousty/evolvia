@@ -22,7 +22,7 @@ export function Offers() {
           {offers.map((offer, i) => (
             <AnimatedSection key={offer.id} delay={i * 0.1}>
               <div
-                className={`glass-card rounded-2xl p-8 flex flex-col h-full relative ${
+                className={`glass-card rounded-md p-8 flex flex-col h-full relative ${
                   offer.highlight
                     ? 'border-evolvia-border-hover shadow-silver-glow'
                     : ''
@@ -35,7 +35,7 @@ export function Offers() {
                 )}
 
                 <div className="mb-6">
-                  <h3 className="font-display text-2xl font-light text-evolvia-text mb-1">
+                  <h3 className="font-display text-xl font-light text-evolvia-text mb-1">
                     {offer.name}
                   </h3>
                   <p className="text-evolvia-muted text-sm font-body">
@@ -44,7 +44,7 @@ export function Offers() {
                 </div>
 
                 <div className="mb-6">
-                  <span className="font-display text-5xl font-light text-chrome">
+                  <span className="font-display text-3xl font-light text-chrome">
                     {offer.price.toLocaleString('fr-FR')}&euro;
                   </span>
                   <span className="text-evolvia-muted text-sm font-body ml-2">

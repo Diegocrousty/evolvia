@@ -34,7 +34,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex items-center gap-3 mb-10"
+          className="flex items-center gap-3 mb-8"
         >
           <span
             className="w-1.5 h-1.5 rounded-full"
@@ -43,8 +43,8 @@ export function Hero() {
           <span
             className="font-mono uppercase"
             style={{
-              color: 'rgba(240,238,235,0.35)',
-              fontSize: '10px',
+              color: 'rgba(240,238,235,0.40)',
+              fontSize: '11px',
               letterSpacing: '0.16em',
             }}
           >
@@ -59,7 +59,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="font-display font-light uppercase mb-4"
           style={{
-            fontSize: 'clamp(64px, 10vw, 96px)',
+            fontSize: 'clamp(64px, 10vw, 80px)',
             letterSpacing: '0.12em',
             color: '#f0eeeb',
             lineHeight: 1,
@@ -86,7 +86,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="font-display font-light mb-4"
           style={{
-            fontSize: 'clamp(36px, 6vw, 64px)',
+            fontSize: 'clamp(32px, 6vw, 64px)',
             letterSpacing: '-0.02em',
             color: '#f0eeeb',
             lineHeight: 1.05,
@@ -113,7 +113,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="font-body mb-10"
+          className="font-body mb-8"
           style={{
             fontSize: '15px',
             lineHeight: 1.7,
@@ -137,7 +137,7 @@ export function Hero() {
               display: 'inline-block',
               background: '#c2620a',
               color: '#f0eeeb',
-              padding: '12px 28px',
+              padding: '12px 24px',
               borderRadius: '9999px',
               fontFamily: "var(--font-body), 'DM Sans', sans-serif",
               fontSize: '13px',
@@ -167,7 +167,7 @@ export function Hero() {
           <span
             className="font-mono uppercase"
             style={{
-              fontSize: '10px',
+              fontSize: '11px',
               letterSpacing: '0.12em',
               color: 'rgba(240,238,235,0.25)',
             }}

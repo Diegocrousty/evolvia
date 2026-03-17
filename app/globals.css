@@ -18,8 +18,8 @@
   /* Texte — warm whites, jamais #fff pur */
   --white: #f0eeeb;
   --white-82: rgba(240, 238, 235, 0.82);
-  --white-45: rgba(240, 238, 235, 0.45);
-  --white-35: rgba(240, 238, 235, 0.35);
+  --white-40: rgba(240, 238, 235, 0.40);
+  --white-25: rgba(240, 238, 235, 0.25);
   --white-15: rgba(240, 238, 235, 0.15);
   --white-08: rgba(240, 238, 235, 0.08);
   --white-04: rgba(240, 238, 235, 0.04);
@@ -35,7 +35,7 @@
 
   /* Borders */
   --border: rgba(240, 238, 235, 0.08);
-  --border-hover: rgba(240, 238, 235, 0.18);
+  --border-hover: rgba(240, 238, 235, 0.15);
 
   /* Easing */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -186,7 +186,7 @@ body, a, button {
   transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 .btn-secondary:hover {
-  border-color: rgba(240, 238, 235, 0.35);
+  border-color: rgba(240, 238, 235, 0.25);
   background: rgba(240, 238, 235, 0.04);
   color: var(--white);
 }
@@ -196,7 +196,7 @@ body, a, button {
 
 /* Footer links */
 .footer-link {
-  color: var(--white-45);
+  color: var(--white-40);
 }
 .footer-link:hover {
   color: var(--white);
@@ -240,7 +240,7 @@ body, a, button {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 12px;
     transition: all 300ms ease;
   }
   .glass-card:hover {

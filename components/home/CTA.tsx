@@ -6,7 +6,7 @@ export function CTA() {
     <section className="py-32 px-6">
       <div className="max-w-4xl mx-auto">
         <AnimatedSection>
-          <div className="relative glass-card rounded-2xl p-12 md:p-20 text-center overflow-hidden">
+          <div className="relative glass-card rounded-md p-12 md:p-20 text-center overflow-hidden">
             {/* Warm glow from top */}
             <div
               className="absolute inset-0 pointer-events-none"
@@ -24,7 +24,7 @@ export function CTA() {
                   Ou on vous rembourse.
                 </span>
               </h2>
-              <p className="text-evolvia-muted font-body max-w-md mx-auto mb-10">
+              <p className="text-evolvia-muted font-body max-w-md mx-auto mb-8">
                 Aucun risque. Si le r&eacute;sultat ne vous convient pas, vous &ecirc;tes
                 rembours&eacute; int&eacute;gralement.
               </p>

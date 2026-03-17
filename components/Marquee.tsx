@@ -25,7 +25,7 @@ function MarqueeRow() {
           />
           <span
             className="font-body text-sm tracking-wide"
-            style={{ color: 'var(--white-45)' }}
+            style={{ color: 'var(--white-40)' }}
           >
             {item}
           </span>

@@ -13,10 +13,10 @@ export function Footer() {
       <div className="max-w-[1100px] mx-auto px-6 py-16">
         {/* Logo */}
         <div className="text-center mb-12">
-          <div className="font-display text-3xl italic font-light tracking-wide" style={{ color: 'var(--white)' }}>
+          <div className="font-display text-2xl italic font-light tracking-wide" style={{ color: 'var(--white)' }}>
             Evolvia
           </div>
-          <p className="text-sm font-body mt-2" style={{ color: 'var(--white-45)' }}>
+          <p className="text-sm font-body mt-2" style={{ color: 'var(--white-40)' }}>
             Agence IA pour entreprises fran&ccedil;aises
           </p>
         </div>
@@ -38,7 +38,7 @@ export function Footer() {
         <div className="w-16 h-px mx-auto mb-8" style={{ background: 'var(--grey-3)' }} />
 
         {/* Copyright */}
-        <div className="text-center text-xs font-body" style={{ color: 'var(--white-45)' }}>
+        <div className="text-center text-xxs font-body" style={{ color: 'var(--white-40)' }}>
           &copy; {new Date().getFullYear()} Evolvia &mdash; Tous droits r&eacute;serv&eacute;s
         </div>
       </div>

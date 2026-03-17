@@ -64,12 +64,12 @@ export function Navbar() {
               key={href}
               href={href}
               className="text-sm font-body tracking-wide transition-colors duration-200"
-              style={{ color: 'var(--white-45)' }}
+              style={{ color: 'var(--white-40)' }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.color = 'var(--white)')
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = 'var(--white-45)')
+                (e.currentTarget.style.color = 'var(--white-40)')
               }
             >
               {label}
@@ -86,15 +86,15 @@ export function Navbar() {
         >
           <span
             className="block w-5 h-px mb-1.5 transition-all"
-            style={{ background: 'var(--white-45)' }}
+            style={{ background: 'var(--white-40)' }}
           />
           <span
             className="block w-5 h-px mb-1.5 transition-all"
-            style={{ background: 'var(--white-45)' }}
+            style={{ background: 'var(--white-40)' }}
           />
           <span
             className="block w-3 h-px transition-all"
-            style={{ background: 'var(--white-45)' }}
+            style={{ background: 'var(--white-40)' }}
           />
         </button>
       </motion.div>
@@ -106,7 +106,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="fixed top-20 left-4 right-4 md:hidden rounded-2xl px-6 pb-6 pt-4"
+            className="fixed top-20 left-4 right-4 md:hidden rounded-lg px-6 pb-6 pt-4"
             style={{
               background: 'rgba(8,8,8,0.96)',
               backdropFilter: 'blur(20px)',

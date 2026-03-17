@@ -40,16 +40,16 @@ export function Process() {
               <AnimatedSection key={i} delay={i * 0.15}>
                 <div className="flex gap-8 md:gap-12 items-start">
                   <div className="relative shrink-0">
-                    <div className="font-display text-6xl md:text-7xl font-light" style={{ color: 'rgba(194,98,10,1)' }}>
+                    <div className="font-display text-3xl md:text-4xl font-light" style={{ color: 'rgba(194,98,10,1)' }}>
                       {step.number}
                     </div>
                   </div>
 
                   <div className="pt-2">
-                    <div className="text-evolvia-silver/60 text-xs font-body tracking-widest uppercase mb-2">
+                    <div className="text-evolvia-silver/60 text-xxs font-body tracking-widest uppercase mb-2">
                       {step.time}
                     </div>
-                    <h3 className="font-display text-3xl font-light text-evolvia-text mb-3">
+                    <h3 className="font-display text-2xl font-light text-evolvia-text mb-3">
                       {step.title}
                     </h3>
                     <p className="text-evolvia-muted font-body text-sm leading-relaxed max-w-md">

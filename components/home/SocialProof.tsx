@@ -38,7 +38,7 @@ export function SocialProof() {
           {stats.map((stat, i) => (
             <AnimatedSection key={i} delay={i * 0.15}>
               <div className="text-center">
-                <div className="font-display text-6xl md:text-7xl font-light text-holographic mb-3">
+                <div className="font-display text-4xl md:text-5xl font-light text-holographic mb-3">
                   <AnimatedCounter
                     target={stat.target}
                     suffix={stat.suffix}
