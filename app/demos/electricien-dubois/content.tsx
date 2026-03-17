@@ -143,7 +143,7 @@ export default function HomeContent({
 
         <div
           className="max-w-[1100px] mx-auto px-6 relative z-[2] flex flex-col justify-end"
-          style={{ minHeight: '88vh', paddingBottom: 96 }}
+          style={{ minHeight: '88vh', paddingTop: 80, paddingBottom: 96 }}
         >
           <EDAnimatedSection>
             {/* Badge */}

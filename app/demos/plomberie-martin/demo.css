@@ -5,6 +5,10 @@
    DESIGN-SYSTEM.md v1.0 — toutes valeurs conformes
    ═══════════════════════════════════════════════ */
 
+.pm-demo {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Fonds — SKILL plombier : fond blanc, surface gris clair */
   --pm-bg: #FFFFFF;
