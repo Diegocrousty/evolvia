@@ -18,13 +18,13 @@ export function Offers() {
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
           {offers.map((offer, i) => (
             <AnimatedSection key={offer.id} delay={i * 0.1}>
               <div
-                className={`glass-card rounded-md p-8 flex flex-col h-full relative ${
+                className={`glass-card rounded-md p-8 flex flex-col h-full relative transition-transform duration-300 ${
                   offer.highlight
-                    ? 'border-evolvia-border-hover shadow-silver-glow'
+                    ? 'border-evolvia-border-hover shadow-silver-glow md:scale-[1.04] md:-my-4'
                     : ''
                 }`}
               >
