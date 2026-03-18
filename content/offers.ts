@@ -50,9 +50,9 @@ export const offers = [
     highlight: false,
     features: [
       'Tout le pack Business',
-      'Chatbot autonome 24h/7',
-      'Répond aux questions clients',
-      'Qualifie les leads automatiquement',
+      'Chatbot IA personnalisé pour votre activité',
+      'Répond à vos clients 24h/7',
+      'Qualifie vos prospects automatiquement',
       'Hébergement 1 an inclus',
       'Livré en 7 jours ou moins',
     ],
@@ -62,7 +62,7 @@ export const offers = [
 ] as const
 
 export const retainerSite = {
-  name: 'Maintenance site',
+  name: 'Forfait maintenance',
   tagline: 'Gardez votre site à jour et performant.',
   price: 150,
   period: 'mois',
@@ -75,14 +75,14 @@ export const retainerSite = {
 }
 
 export const retainerChatbot = {
-  name: 'Maintenance chatbot',
+  name: 'Forfait maintenance + chatbot',
   tagline: 'Votre assistant IA toujours à jour.',
   price: 249,
   period: 'mois',
   features: [
-    'Mise à jour base de connaissances',
-    'Monitoring des conversations',
-    'Optimisation des réponses',
+    'Chatbot adapté à vos produits et services',
+    'Mise à jour des réponses chaque mois',
+    'Suivi des conversations et optimisation',
     'Coûts API inclus',
   ],
 }

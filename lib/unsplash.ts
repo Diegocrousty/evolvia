@@ -31,7 +31,7 @@ export async function getUnsplashImage(
     index?: number
   } = {}
 ): Promise<UnsplashImage> {
-  const key = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY
+  const key = process.env.UNSPLASH_ACCESS_KEY
   const w = options.width ?? 1400
   const h = options.height ?? 700
 

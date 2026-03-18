@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { offers } from '@/content/offers'
+import { offers, retainerSite, retainerChatbot } from '@/content/offers'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 
 export function Offers() {
@@ -74,6 +74,45 @@ export function Offers() {
                 >
                   {offer.cta}
                 </Link>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        {/* Forfaits maintenance */}
+        <div className="flex flex-col gap-6 mt-12">
+          {[retainerSite, retainerChatbot].map((plan) => (
+            <AnimatedSection key={plan.name}>
+              <div className="glass-card rounded-md p-8 md:p-12">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                  <div>
+                    <h3 className="font-display text-xl font-light text-evolvia-text mb-2">
+                      {plan.name}
+                    </h3>
+                    <p className="text-evolvia-muted font-body text-sm mb-4">
+                      {plan.tagline}
+                    </p>
+                    <ul className="space-y-2">
+                      {plan.features.map((f, i) => (
+                        <li
+                          key={i}
+                          className="text-evolvia-text-secondary text-sm font-body flex items-center gap-2"
+                        >
+                          <span className="text-evolvia-silver">&mdash;</span>
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="text-center md:text-right shrink-0">
+                    <div className="font-display text-3xl md:text-4xl font-light text-chrome">
+                      {plan.price}&euro;
+                    </div>
+                    <div className="text-evolvia-muted text-sm font-body">
+                      /{plan.period}
+                    </div>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
           ))}
