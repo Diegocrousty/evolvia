@@ -34,7 +34,7 @@ export default function WebServicesPage() {
       {/* Pricing cards */}
       <section className="pb-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             {offers.map((offer, i) => (
               <AnimatedSection key={offer.id} delay={i * 0.1}>
                 <PricingCard {...offer} />
