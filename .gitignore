@@ -35,3 +35,5 @@ next-env.d.ts
 .claude/impeccable
 app - Copie/
 .superpowers/
+
+.vercel

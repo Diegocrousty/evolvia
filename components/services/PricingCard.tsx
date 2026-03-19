@@ -25,7 +25,7 @@ export function PricingCard({
   anchor,
 }: PricingCardProps) {
   return (
-    <TiltCard className="h-full">
+    <TiltCard className={`h-full ${highlight ? 'md:scale-[1.04] md:-my-4' : ''}`}>
       <div
         className={`relative glass-card rounded-2xl p-8 flex flex-col h-full ${
           highlight
@@ -73,7 +73,11 @@ export function PricingCard({
 
         <Link
           href={`/commande?offre=${id}`}
-          className="block text-center font-body text-sm py-3.5 rounded-sm transition-all duration-300 btn-primary justify-center"
+          className={`block text-center font-body text-sm py-3.5 rounded-full transition-all duration-300 justify-center ${
+            highlight
+              ? 'btn-primary'
+              : 'border border-evolvia-border text-evolvia-text hover:border-evolvia-border-hover hover-silver-glow'
+          }`}
         >
           {cta}
         </Link>
