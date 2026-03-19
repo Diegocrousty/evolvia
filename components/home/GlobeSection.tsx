@@ -24,7 +24,7 @@ export function GlobeSection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
+      <div className="relative z-10 mx-auto max-w-[1100px] px-6">
         {/* ── Text content ── */}
         <AnimatedSection className="text-center mb-16 md:mb-20">
           <p className="text-xxs tracking-[0.35em] uppercase text-evolvia-muted mb-6">
@@ -42,64 +42,17 @@ export function GlobeSection() {
           </p>
         </AnimatedSection>
 
-        {/* ── Globe container — centered ── */}
-        <div className="relative flex items-center justify-center" style={{ minHeight: 300 }}>
-          {/* Pulse rings expanding outward from globe center */}
-          {isInView && (
-            <>
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="globe-pulse-ring globe-pulse-ring--1" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="globe-pulse-ring globe-pulse-ring--2" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="globe-pulse-ring globe-pulse-ring--3" />
-              </div>
-            </>
-          )}
-
-          {/* Amber glow surrounding globe 360° */}
-          {isInView && (
-            <div
-              className="absolute pointer-events-none globe-beacon w-[280px] h-[280px] md:w-[420px] md:h-[420px]"
-              style={{
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                borderRadius: '50%',
-                background:
-                  'radial-gradient(circle, rgba(194,98,10,0.14) 0%, rgba(194,98,10,0.06) 40%, transparent 70%)',
-                filter: 'blur(30px)',
-              }}
-            />
-          )}
-
-          {/* Globe */}
+        {/* ── Globe — centered, no clipping ── */}
+        <div className="flex justify-center items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-[280px] h-[280px] md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px] rounded-full overflow-hidden"
+            className="w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[420px] md:h-[420px] lg:w-[520px] lg:h-[520px]"
+            style={{ isolation: 'isolate' }}
           >
-            <Globe
-              className="w-full h-full"
-              width={520}
-              height={520}
-            />
+            <Globe className="w-full h-full" />
           </motion.div>
-
-          {/* Expansion rays — 4 subtle amber lines radiating from center */}
-          {isInView && (
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="globe-rays">
-                <div className="globe-ray globe-ray--1" />
-                <div className="globe-ray globe-ray--2" />
-                <div className="globe-ray globe-ray--3" />
-                <div className="globe-ray globe-ray--4" />
-              </div>
-            </div>
-          )}
         </div>
 
         {/* ── Stats row ── */}

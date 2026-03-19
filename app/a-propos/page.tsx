@@ -32,7 +32,7 @@ export default function AProposPage() {
     <>
       {/* Hero */}
       <section className="pt-32 pb-16 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <AnimatedSection>
             <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-light mb-8 leading-tight">
               Une agence née de{' '}
@@ -61,7 +61,7 @@ export default function AProposPage() {
 
       {/* Values */}
       <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <AnimatedSection>
             <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] font-light mb-16">
               Nos{' '}
@@ -73,7 +73,7 @@ export default function AProposPage() {
             {values.map((v, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="border-l-2 border-evolvia-silver/20 pl-6">
-                  <h3 className="font-display text-2xl font-light text-evolvia-text mb-3">
+                  <h3 className="font-body text-lg font-medium text-evolvia-text mb-3">
                     {v.title}
                   </h3>
                   <p className="text-evolvia-muted font-body text-sm leading-relaxed">
@@ -88,9 +88,9 @@ export default function AProposPage() {
 
       {/* Mission */}
       <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <AnimatedSection>
-            <div className="glass-card rounded-2xl p-12 md:p-16">
+            <div className="glass-card rounded-md p-12 md:p-16">
               <h2 className="font-display text-3xl font-light text-evolvia-text mb-6">
                 Notre mission
               </h2>

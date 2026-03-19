@@ -15,7 +15,7 @@ export default function WebServicesPage() {
     <>
       {/* Hero */}
       <section className="pt-32 pb-16 px-6">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-[1100px] mx-auto text-center">
           <AnimatedSection>
             <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-light mb-6 leading-tight">
               Nos offres{' '}
@@ -33,10 +33,10 @@ export default function WebServicesPage() {
 
       {/* Pricing cards */}
       <section className="pb-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {offers.map((offer, i) => (
-              <AnimatedSection key={offer.id} delay={i * 0.1}>
+              <AnimatedSection key={offer.id} delay={i * 0.1} className={offer.highlight ? 'md:scale-[1.04] md:-my-4 z-10' : ''}>
                 <PricingCard {...offer} />
               </AnimatedSection>
             ))}

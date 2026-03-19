@@ -16,7 +16,7 @@ export function EvolviaShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div
-      className="relative overflow-hidden min-h-screen"
+      className="relative overflow-x-hidden min-h-screen"
       style={{ background: 'var(--bg)', cursor: 'none' }}
     >
       <Background />

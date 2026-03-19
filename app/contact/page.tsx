@@ -37,7 +37,7 @@ export default function ContactPage() {
 
   return (
     <section className="min-h-screen pt-32 pb-16 px-6">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-[672px] mx-auto">
         <AnimatedSection>
           <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-light mb-6 leading-tight">
             Parlons de{' '}
@@ -53,7 +53,7 @@ export default function ContactPage() {
 
         <AnimatedSection delay={0.2}>
           {status === 'sent' ? (
-            <div className="glass-card rounded-2xl p-12 text-center border-evolvia-silver/20">
+            <div className="glass-card rounded-sm p-12 text-center border-evolvia-silver/20">
               <div className="text-evolvia-silver text-4xl mb-4">✓</div>
               <h2 className="font-display text-3xl font-light text-evolvia-text mb-3">
                 Message envoyé
@@ -76,7 +76,7 @@ export default function ContactPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-2xl px-5 py-3.5 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
+                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-sm px-6 py-4 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
                   placeholder="Jean Dupont"
                 />
               </div>
@@ -92,7 +92,7 @@ export default function ContactPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-2xl px-5 py-3.5 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
+                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-sm px-6 py-4 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
                   placeholder="jean@entreprise.fr"
                 />
               </div>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-2xl px-5 py-3.5 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
+                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-sm px-6 py-4 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
                   placeholder="06 12 34 56 78"
                 />
               </div>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
-                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-2xl px-5 py-3.5 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors resize-none"
+                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-sm px-6 py-4 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors resize-none"
                   placeholder="Je suis plombier à Paris et j'aimerais un site pour recevoir des demandes de devis..."
                 />
               </div>

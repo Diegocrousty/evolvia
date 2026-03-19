@@ -44,7 +44,7 @@ export function FAQ() {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="border border-evolvia-border rounded-2xl overflow-hidden hover:border-evolvia-border-hover transition-colors"
+              className="border border-evolvia-border rounded-md overflow-hidden hover:border-evolvia-border-hover transition-colors"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}

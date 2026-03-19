@@ -26,7 +26,7 @@ const benefits = [
 export function Benefits() {
   return (
     <section className="py-32 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[1100px] mx-auto">
         <AnimatedSection>
           <h2 data-cursor-headline className="font-display text-[clamp(2rem,5vw,4rem)] font-light mb-4 leading-tight">
             Pourquoi Evolvia
@@ -48,7 +48,7 @@ export function Benefits() {
                 <div className="absolute top-4 right-6 font-display text-3xl font-light select-none" style={{ color: 'rgba(194,98,10,0.8)' }}>
                   {b.number}
                 </div>
-                <h3 className="font-display text-xl font-light text-evolvia-text mb-3">
+                <h3 className="font-body text-lg font-medium text-evolvia-text mb-3">
                   {b.title}
                 </h3>
                 <p className="text-evolvia-muted font-body text-sm leading-relaxed">

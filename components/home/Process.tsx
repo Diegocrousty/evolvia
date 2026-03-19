@@ -24,7 +24,7 @@ const steps = [
 export function Process() {
   return (
     <section className="py-32 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[1100px] mx-auto">
         <AnimatedSection>
           <h2 data-cursor-headline className="font-display text-[clamp(2rem,5vw,4rem)] font-light mb-16 leading-tight">
             Comment &ccedil;a marche<br />
@@ -49,7 +49,7 @@ export function Process() {
                     <div className="text-evolvia-silver/60 text-xxs font-body tracking-widest uppercase mb-2">
                       {step.time}
                     </div>
-                    <h3 className="font-display text-2xl font-light text-evolvia-text mb-3">
+                    <h3 className="font-body text-lg font-medium text-evolvia-text mb-3">
                       {step.title}
                     </h3>
                     <p className="text-evolvia-muted font-body text-sm leading-relaxed max-w-md">

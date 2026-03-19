@@ -5,7 +5,7 @@ import { AnimatedSection } from '@/components/ui/AnimatedSection'
 export function Offers() {
   return (
     <section className="py-32 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[1100px] mx-auto">
         <AnimatedSection>
           <h2 data-cursor-headline className="font-display text-[clamp(2rem,5vw,4rem)] font-light mb-4 text-center leading-tight">
             Des offres{' '}
@@ -18,13 +18,13 @@ export function Offers() {
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {offers.map((offer, i) => (
-            <AnimatedSection key={offer.id} delay={i * 0.1}>
+            <AnimatedSection key={offer.id} delay={i * 0.1} className={offer.highlight ? 'md:scale-[1.04] md:-my-4 z-10' : ''}>
               <div
-                className={`glass-card rounded-md p-8 flex flex-col h-full relative transition-transform duration-300 ${
+                className={`glass-card rounded-md p-6 flex flex-col h-full relative transition-transform duration-300 ${
                   offer.highlight
-                    ? 'border-evolvia-border-hover shadow-silver-glow md:scale-[1.04] md:-my-4'
+                    ? 'border-evolvia-border-hover shadow-silver-glow'
                     : ''
                 }`}
               >
@@ -34,8 +34,8 @@ export function Offers() {
                   </div>
                 )}
 
-                <div className="mb-6">
-                  <h3 className="font-display text-xl font-light text-evolvia-text mb-1">
+                <div className="mb-4">
+                  <h3 className="font-body text-lg font-medium text-evolvia-text mb-1">
                     {offer.name}
                   </h3>
                   <p className="text-evolvia-muted text-sm font-body">
@@ -43,7 +43,7 @@ export function Offers() {
                   </p>
                 </div>
 
-                <div className="mb-6">
+                <div className="mb-4">
                   <span className="font-display text-3xl font-light text-chrome">
                     {offer.price.toLocaleString('fr-FR')}&euro;
                   </span>
@@ -52,7 +52,7 @@ export function Offers() {
                   </span>
                 </div>
 
-                <ul className="flex-1 space-y-3 mb-8">
+                <ul className="flex-1 space-y-2 mb-6">
                   {offer.features.map((f, j) => (
                     <li
                       key={j}
@@ -79,40 +79,43 @@ export function Offers() {
           ))}
         </div>
 
-        {/* Forfaits maintenance */}
-        <div className="flex flex-col gap-6 mt-12">
+        {/* Séparateur */}
+        <div className="w-72 h-px mx-auto mt-20 mb-16" style={{ background: 'rgba(240,238,235,0.15)' }} />
+
+        {/* Forfaits maintenance — côte à côte */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[retainerSite, retainerChatbot].map((plan) => (
             <AnimatedSection key={plan.name}>
-              <div className="glass-card rounded-md p-8 md:p-12">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="glass-card rounded-md p-5 flex flex-col h-full">
+                <div className="flex items-start justify-between gap-4 mb-3">
                   <div>
-                    <h3 className="font-display text-xl font-light text-evolvia-text mb-2">
+                    <h3 className="font-display text-xl font-light text-evolvia-text mb-0.5">
                       {plan.name}
                     </h3>
-                    <p className="text-evolvia-muted font-body text-sm mb-4">
+                    <p className="text-evolvia-muted font-body text-sm">
                       {plan.tagline}
                     </p>
-                    <ul className="space-y-2">
-                      {plan.features.map((f, i) => (
-                        <li
-                          key={i}
-                          className="text-evolvia-text-secondary text-sm font-body flex items-center gap-2"
-                        >
-                          <span className="text-evolvia-silver">&mdash;</span>
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-                  <div className="text-center md:text-right shrink-0">
-                    <div className="font-display text-3xl md:text-4xl font-light text-chrome">
+                  <div className="text-right shrink-0">
+                    <div className="font-display text-2xl font-light text-chrome">
                       {plan.price}&euro;
                     </div>
-                    <div className="text-evolvia-muted text-sm font-body">
+                    <div className="text-evolvia-muted text-xs font-body">
                       /{plan.period}
                     </div>
                   </div>
                 </div>
+                <ul className="space-y-1.5">
+                  {plan.features.map((f, i) => (
+                    <li
+                      key={i}
+                      className="text-evolvia-text-secondary text-sm font-body flex items-center gap-2"
+                    >
+                      <span className="text-evolvia-silver">&mdash;</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </AnimatedSection>
           ))}

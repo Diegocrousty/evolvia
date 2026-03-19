@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import type { UnsplashImage } from '@/lib/unsplash'
 
@@ -37,7 +38,7 @@ export function ProjectCard({
       rel="noopener noreferrer"
     >
       <div
-        className="relative glass-card rounded-2xl overflow-hidden group cursor-pointer hover:border-evolvia-border-hover transition-all duration-300"
+        className="relative glass-card rounded-md overflow-hidden group cursor-pointer hover:border-evolvia-border-hover transition-all duration-300"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
@@ -47,14 +48,15 @@ export function ProjectCard({
         {/* Poster with real image */}
         <div className="aspect-[4/3] relative overflow-hidden">
           {/* Background image */}
-          <img
+          <Image
             src={image.src}
             alt={image.alt}
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover transition-transform duration-500"
             style={{
               transform: hovered ? 'scale(1.05)' : 'scale(1)',
             }}
-            loading="lazy"
           />
 
           {/* Overlay gradient */}
@@ -89,7 +91,7 @@ export function ProjectCard({
 
           {/* Hover arrow */}
           <div
-            className="absolute top-5 right-5 z-10 transition-all duration-300"
+            className="absolute top-4 right-4 z-10 transition-all duration-300"
             style={{
               opacity: hovered ? 1 : 0,
               transform: hovered ? 'translate(0,0)' : 'translate(-4px,4px)',
@@ -111,42 +113,15 @@ export function ProjectCard({
         </div>
 
         {/* Info bar */}
-        <div className="p-5">
-          <div className="flex items-center justify-between mb-2">
-            <p className="text-evolvia-text-secondary text-xs font-body">
-              {offer}
-            </p>
-            <span
-              className="text-[10px] font-mono tracking-widest uppercase px-2 py-0.5 rounded"
-              style={{
-                color: poster.accent,
-                background: `${poster.accent}15`,
-              }}
-            >
-              Voir le site →
-            </span>
-          </div>
-
-          {/* Description reveal on hover */}
-          <div
-            className={`overflow-hidden transition-all duration-300 ${
-              hovered ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'
-            }`}
-          >
-            <p className="text-evolvia-muted font-body text-sm leading-relaxed">
-              {description}
-            </p>
-          </div>
+        <div className="p-6 flex items-center justify-between">
+          <p className="text-evolvia-text-secondary text-xs font-body">
+            {offer}
+          </p>
+          <span className="text-xxs font-body text-evolvia-muted tracking-wide transition-colors group-hover:text-evolvia-text">
+            Voir le site →
+          </span>
         </div>
 
-        {/* Unsplash credit */}
-        {image.credit && (
-          <div className="px-5 pb-3 -mt-2">
-            <p className="text-evolvia-muted text-[10px] font-mono opacity-40">
-              Photo: {image.credit}
-            </p>
-          </div>
-        )}
       </div>
     </a>
   )

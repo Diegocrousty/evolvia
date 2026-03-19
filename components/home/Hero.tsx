@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { GrainOverlay } from '@/components/ui/GrainOverlay'
+
 
 export function Hero() {
   return (
@@ -25,8 +25,7 @@ export function Hero() {
         }}
       />
 
-      {/* Grain overlay — signature Evolvia */}
-      <GrainOverlay />
+      {/* Grain overlay handled by EvolviaShell — no duplicate here */}
 
       <div className="relative z-10 max-w-[1100px] mx-auto w-full px-6 flex flex-col items-center text-center">
         {/* 1. Eyebrow label */}

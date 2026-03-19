@@ -1,24 +1,13 @@
 // components/ui/globe.tsx
 'use client'
 
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useState } from 'react'
 import createGlobe, { COBEOptions } from 'cobe'
 import { cn } from '@/lib/utils'
-
-// Paris coordinates
-const PARIS_LAT = 48.8566
-const PARIS_LNG = 2.3522
-
-// Convert lat/lng to COBE marker format
-function latLngToMarker(lat: number, lng: number, size: number) {
-  return { location: [lat, lng] as [number, number], size }
-}
 
 // Dense grid of small markers covering France's territory — renders as amber dots
 const FRANCE_MARKERS = (() => {
   const markers: { location: [number, number]; size: number }[] = []
-  // France approximate bounds: lat 42.3–51.1, lng -5.1–8.2
-  // Grid with ~1° spacing, small dot size to blend with continent dots
   const points: [number, number][] = [
     // Northern France
     [51.0, 2.3], [50.6, 3.0], [50.4, 1.8], [50.1, 2.5],
@@ -51,16 +40,16 @@ const FRANCE_MARKERS = (() => {
 
 interface GlobeProps {
   className?: string
-  width?: number
-  height?: number
 }
 
-export function Globe({ className, width = 600, height = 600 }: GlobeProps) {
+export function Globe({ className }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const pointerInteracting = useRef<number | null>(null)
   const pointerInteractionMovement = useRef(0)
   const phiRef = useRef(0)
   const globeRef = useRef<ReturnType<typeof createGlobe> | null>(null)
+  const [renderSize, setRenderSize] = useState(0)
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
     pointerInteracting.current = e.clientX - pointerInteractionMovement.current
@@ -84,29 +73,42 @@ export function Globe({ className, width = 600, height = 600 }: GlobeProps) {
     }
   }, [])
 
+  // Track container size with ResizeObserver
   useEffect(() => {
-    if (!canvasRef.current) return
+    if (!containerRef.current) return
+    const el = containerRef.current
+    const ro = new ResizeObserver((entries) => {
+      const w = entries[0]?.contentRect.width ?? 0
+      if (w > 0) setRenderSize(w)
+    })
+    ro.observe(el)
+    // Initial measurement
+    if (el.offsetWidth > 0) setRenderSize(el.offsetWidth)
+    return () => ro.disconnect()
+  }, [])
 
-    let animationId: number
+  // Create/recreate COBE when renderSize changes
+  useEffect(() => {
+    if (!canvasRef.current || renderSize <= 0) return
+
     const pixelRatio = Math.min(window.devicePixelRatio, 2)
 
     const cobeConfig: COBEOptions = {
       devicePixelRatio: pixelRatio,
-      width: width * pixelRatio,
-      height: height * pixelRatio,
-      phi: 0,
-      theta: 0.25,
+      width: renderSize * pixelRatio,
+      height: renderSize * pixelRatio,
+      phi: phiRef.current,
+      theta: 0.15,
       dark: 1,
-      scale: 0.85,                            // Smaller globe within canvas — leaves room for circular clip
+      scale: 1.05,
       diffuse: 2.4,
       mapSamples: 24000,
-      mapBrightness: 4,                       // Brighter dots
-      baseColor: [0.12, 0.11, 0.10],         // Dark base, continents nearly invisible
-      markerColor: [0.76, 0.38, 0.04],       // Amber (unused — no markers)
-      glowColor: [0.25, 0.12, 0.02],         // Amber atmospheric glow 360°
-      markers: FRANCE_MARKERS,                  // Amber dots covering France only
+      mapBrightness: 4,
+      baseColor: [0.12, 0.11, 0.10],
+      markerColor: [0.76, 0.38, 0.04],
+      glowColor: [0.25, 0.12, 0.02],
+      markers: FRANCE_MARKERS,
       onRender: (state) => {
-        // Auto-rotate when not interacting
         if (pointerInteracting.current === null) {
           phiRef.current += 0.003
         } else {
@@ -114,9 +116,15 @@ export function Globe({ className, width = 600, height = 600 }: GlobeProps) {
           pointerInteractionMovement.current *= 0.9
         }
         state.phi = phiRef.current
-        state.width = width * pixelRatio
-        state.height = height * pixelRatio
+        state.width = renderSize * pixelRatio
+        state.height = renderSize * pixelRatio
       },
+    }
+
+    // Destroy previous instance before creating new one
+    if (globeRef.current) {
+      globeRef.current.destroy()
+      globeRef.current = null
     }
 
     globeRef.current = createGlobe(canvasRef.current, cobeConfig)
@@ -138,24 +146,27 @@ export function Globe({ className, width = 600, height = 600 }: GlobeProps) {
         globeRef.current = null
       }
     }
-  }, [width, height])
+  }, [renderSize])
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={cn('cursor-grab', className)}
-      onPointerDown={onPointerDown}
-      onPointerUp={onPointerUp}
-      onPointerOut={onPointerOut}
-      onMouseMove={onMouseMove}
-      style={{
-        width: '100%',
-        height: '100%',
-        maxWidth: width,
-        maxHeight: height,
-        aspectRatio: '1',
-        contain: 'layout paint size',
-      }}
-    />
+    <div
+      ref={containerRef}
+      className={cn('relative', className)}
+      style={{ aspectRatio: '1' }}
+    >
+      <canvas
+        ref={canvasRef}
+        className="cursor-grab"
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
+        onPointerOut={onPointerOut}
+        onMouseMove={onMouseMove}
+        style={{
+          width: '100%',
+          height: '100%',
+          mixBlendMode: 'screen',
+        }}
+      />
+    </div>
   )
 }

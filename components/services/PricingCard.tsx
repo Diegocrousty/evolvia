@@ -25,9 +25,9 @@ export function PricingCard({
   anchor,
 }: PricingCardProps) {
   return (
-    <TiltCard className={`h-full ${highlight ? 'md:scale-[1.04] md:-my-4' : ''}`}>
+    <TiltCard className="h-full">
       <div
-        className={`relative glass-card rounded-2xl p-8 flex flex-col h-full ${
+        className={`relative glass-card rounded-md p-4 flex flex-col h-full ${
           highlight
             ? 'border-evolvia-border-hover shadow-silver-glow'
             : ''
@@ -39,23 +39,23 @@ export function PricingCard({
           </div>
         )}
 
-        <div className="mb-6">
-          <h3 className="font-display text-2xl font-light text-evolvia-text mb-1">
+        <div className="mb-3">
+          <h3 className="font-body text-lg font-medium text-evolvia-text mb-1">
             {name}
           </h3>
           <p className="text-evolvia-muted text-sm font-body">{tagline}</p>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-1">
           <span className="font-display text-5xl font-light text-chrome">
             {price.toLocaleString('fr-FR')}€
           </span>
         </div>
-        <div className="text-evolvia-muted text-xs font-body mb-6">
+        <div className="text-evolvia-muted text-xs font-body mb-3">
           Livré en {delay} · Acompte 50%
         </div>
 
-        <ul className="flex-1 space-y-3 mb-8">
+        <ul className="flex-1 space-y-1.5 mb-4">
           {features.map((f, j) => (
             <li
               key={j}
@@ -67,13 +67,13 @@ export function PricingCard({
           ))}
         </ul>
 
-        <p className="text-evolvia-silver/60 text-xs font-body mb-4 text-center">
+        <p className="text-evolvia-silver/60 text-xs font-body mb-3 text-center">
           {anchor}
         </p>
 
         <Link
           href={`/commande?offre=${id}`}
-          className={`block text-center font-body text-sm py-3.5 rounded-full transition-all duration-300 justify-center ${
+          className={`block text-center font-body text-sm py-3 rounded-full transition-all duration-300 justify-center ${
             highlight
               ? 'btn-primary'
               : 'border border-evolvia-border text-evolvia-text hover:border-evolvia-border-hover hover-silver-glow'

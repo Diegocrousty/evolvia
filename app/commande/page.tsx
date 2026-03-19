@@ -56,7 +56,7 @@ function CommandeContent() {
       <section className="min-h-screen pt-32 pb-16 px-6">
         <div className="max-w-2xl mx-auto">
           <AnimatedSection>
-            <div className="glass-card rounded-2xl p-12 text-center border-evolvia-silver/20">
+            <div className="glass-card rounded-sm p-12 text-center border-evolvia-silver/20">
               <div className="text-evolvia-silver text-4xl mb-4">✓</div>
               <h2 className="font-display text-3xl font-light text-evolvia-text mb-3">
                 Commande reçue
@@ -99,7 +99,7 @@ function CommandeContent() {
               <button
                 key={o.id}
                 onClick={() => setSelectedOffer(o.id)}
-                className={`border rounded-2xl p-4 text-center transition-all duration-300 ${
+                className={`border rounded-sm p-4 text-center transition-all duration-300 ${
                   selectedOffer === o.id
                     ? 'border-evolvia-silver/40 bg-white/[0.05]'
                     : 'border-evolvia-border hover:border-evolvia-border-hover'
@@ -119,7 +119,7 @@ function CommandeContent() {
           </div>
 
           {/* Deposit reminder */}
-          <div className="glass-card rounded-2xl p-5 mb-8 flex items-center gap-4">
+          <div className="glass-card rounded-sm p-5 mb-8 flex items-center gap-4">
             <span className="text-evolvia-silver text-2xl">💳</span>
             <div>
               <p className="text-evolvia-text font-body text-sm">
@@ -150,7 +150,7 @@ function CommandeContent() {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-2xl px-5 py-3.5 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
+                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-sm px-6 py-4 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
                   placeholder="Jean Dupont"
                 />
               </div>
@@ -165,7 +165,7 @@ function CommandeContent() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-2xl px-5 py-3.5 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
+                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-sm px-6 py-4 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
                   placeholder="jean@entreprise.fr"
                 />
               </div>
@@ -183,7 +183,7 @@ function CommandeContent() {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-2xl px-5 py-3.5 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
+                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-sm px-6 py-4 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
                   placeholder="06 12 34 56 78"
                 />
               </div>
@@ -198,7 +198,7 @@ function CommandeContent() {
                   onChange={(e) =>
                     setFormData({ ...formData, business: e.target.value })
                   }
-                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-2xl px-5 py-3.5 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
+                  className="w-full bg-white/[0.03] border border-evolvia-border rounded-sm px-6 py-4 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors"
                   placeholder="Plombier, électricien, agent immobilier..."
                 />
               </div>
@@ -214,7 +214,7 @@ function CommandeContent() {
                 onChange={(e) =>
                   setFormData({ ...formData, details: e.target.value })
                 }
-                className="w-full bg-white/[0.03] border border-evolvia-border rounded-2xl px-5 py-3.5 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors resize-none"
+                className="w-full bg-white/[0.03] border border-evolvia-border rounded-sm px-6 py-4 text-evolvia-text font-body text-sm placeholder:text-evolvia-muted focus:border-evolvia-silver/50 focus:outline-none transition-colors resize-none"
                 placeholder="Avez-vous déjà un site ? Des préférences de couleurs ? Des exemples de sites que vous aimez ?"
               />
             </div>
